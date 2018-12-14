@@ -1,0 +1,11 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:cucumb,org.eclipse.launchbar.core.descriptorType.default\:LogIn_Test.feature,org.eclipse.launchbar.core.descriptorType.default\:SeleniumTest,org.eclipse.launchbar.core.descriptorType.default\:TestRunner,org.eclipse.launchbar.core.descriptorType.default\:cucumberTest,org.eclipse.launchbar.core.descriptorType.default\:TestRunner (1),org.eclipse.launchbar.core.descriptorType.default\:e2e_test,org.eclipse.launchbar.core.descriptorType.default\:TestRunner (2)
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:LogIn_Test.feature/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:LogIn_Test.feature/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:SeleniumTest/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:SeleniumTest/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:cucumb/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:cucumb/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

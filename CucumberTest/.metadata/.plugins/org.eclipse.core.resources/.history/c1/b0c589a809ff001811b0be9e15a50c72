@@ -1,0 +1,23 @@
+Feature: Check correct errror message for invalid user name and password
+Description: The purpose of the test to execute some scenarios
+
+Scenario: User vist the site and enter invalid user name and correct password
+Given user is on Home Page
+When he opens login screen
+And types invalid user name 
+And types correct password
+And clicks the login button
+
+Scenario: User vist the site and enter invalid user name and invalid password
+Given user is on Home Page
+When he opens login screen
+And types correct user name 
+And types invalid password
+And clicks the login button
+
+Scenario: User vist the site and enter invalid user name and invalid password
+Given user is on Home Page
+When he opens login screen
+And types correct user name 
+And types invalid password
+And clicks the login button
