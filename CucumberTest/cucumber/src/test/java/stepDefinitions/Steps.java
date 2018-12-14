@@ -70,7 +70,7 @@ public class Steps {
 	@When("^enter valid user name and valid password and cick login$")
 	public void enter_valid_user_name_and_valid_password_and_cick_login() throws Throwable {
 		driver.findElement(By.id("username")).sendKeys("cmp.atos.admin");
-		driver.findElement(By.id("password")).sendKeys("cmp.atos.admin");
+		driver.findElement(By.id("password")).sendKeys("cmp.atos.addmin");
 		driver.findElement(By.name("login")).click();
 		Thread.sleep(2000);
 		
