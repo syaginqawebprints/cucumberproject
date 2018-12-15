@@ -1,0 +1,13 @@
+task1 
+We need to make it install from GitHub, and updates from git pull command from CMD
+
+task2
+mvn need to be used for build/clean from cmd
+
+task3
+structure of test need to be :
+test_name_positive
+test_name_negative
+test_name_regression
+test_name_bug#
+No hard coded paths etc..
