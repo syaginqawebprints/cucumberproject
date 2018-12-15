@@ -38,4 +38,13 @@ Show me steps:
  1. go to src.. select file... use // before the test etc..
  
  
+ 
+ Task #1 still not clear:
+ please provide a commands how to update from CMD  latest code from repository:
+ for example:
+ login to d:/cucumber/cucumbertest/
+ run command : git pull  ( or git co?) and when its complte  run mvn test command:
+ mvn clean, mvn build, mvn test(name test)
+ 
+ This is a very critical!!!
 
