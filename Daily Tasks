@@ -23,3 +23,10 @@ Click on Catalog,
 Page open , validate page catalot is open.
 
 
+---- Syagin Written-----
+This task completed, to run the specific test, we need to give the test command as follows 
+
+mvn test -Dtest=ValidLogin
+*Here ValidLogin is the Test Name.
+
+
