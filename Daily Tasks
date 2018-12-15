@@ -11,3 +11,15 @@ test_name_negative
 test_name_regression
 test_name_bug#
 No hard coded paths etc..
+
+
+Task # 4
+Login with valid credentials
+Make sure  text apperaed: Welcome to the Cloud User Portal ( need to make validation on text
+Check validation 2 main options (icon apeared, Lanch a stock, manage stock view activities and view dashboard, validatre and print all oprion are available, 
+When click on manage stock option
+When its open validate 6 option menu apeared and available(print text)
+Click on Catalog, 
+Page open , validate page catalot is open.
+
+
