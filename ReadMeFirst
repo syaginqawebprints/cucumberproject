@@ -4,3 +4,4 @@ Here we going to have all steps to setup test on external PC
 
 
 
+maven run test directory:  D:\Atos\CucumberTest\cucumber>mvn test -Dtest=ValidLogin  on my mashine
