@@ -47,4 +47,10 @@ Show me steps:
  mvn clean, mvn build, mvn test(name test)
  
  This is a very critical!!!
+ 
+ 
+ 
+  Task 7 New test run to validate menu icons on top
+ 
+ All menu icons like : Overview, Catalog, Stack, Resources, Activities Dashboard  need to validate, click on it and validate if page open and correct page
 
