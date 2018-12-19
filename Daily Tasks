@@ -1,8 +1,11 @@
 task1 
 We need to make it install from GitHub, and updates from git pull command from CMD
+Please add info to the file  with steps how to use github command from CMD or other tool you use)
 
 task2
 mvn need to be used for build/clean from cmd
+Same here, we have a doc, but need to add a few command  for example mvn clean, mvn build , mvn test  to make sure commnds works and where user 
+should use those commands, from which location)
 
 task3
 structure of test need to be :
@@ -11,7 +14,7 @@ test_name_negative
 test_name_regression
 test_name_bug#
 No hard coded paths etc..
-
+Dont see if its ready.. and need your input here...
 
 Task # 4
 Login with valid credentials
@@ -22,12 +25,16 @@ When its open validate 6 option menu apeared and available(print text)
 Click on Catalog, 
 Page open , validate page catalot is open.
 
+Looks like its complete( but its not working anymore.. JAVA error)
+
 
 ---- Syagin Written-----
 This task completed, to run the specific test, we need to give the test command as follows 
 
 mvn test -Dtest=ValidLogin
 *Here ValidLogin is the Test Name.
+
+Not working  error in maven...!!
 
 Task5  
 
@@ -36,6 +43,8 @@ When Task complete  close browser and print Test Clpmplete.
 Task 6 provide steps  how to remove / disable test what user whant to skip /or just not to run at this time
 Show me steps:
  1. go to src.. select file... use // before the test etc..
+ 
+ Did you work on this one?
  
  
  
@@ -55,18 +64,18 @@ Show me steps:
  All menu icons like : Overview, Catalog, Stack, Resources, Activities Dashboard  need to validate, click on it and validate if page open and correct page
  
  
- Task 8
+ Task 8  not done
  
  Go to catalog page and evaluate all available catalog option/modules.
  Make sure all catalog modules there, and print all catalog list
  
- Task 9 ( probab;ly you will need to go on it with me..)
+ Task 9 ( probab;ly you will need to go on it with me..)  not done
  Go to catalog,  select Bucket module, and add bucket.
  ( just select one of the options from any available from the drop down list and create one, and verify in status page its created.
  Print status if complete.
  
 
-Task 10
+Task 10  not done
 
 Please check recording from skype.
 Need to go to catalog page and get validate all modules ib catalog exists, please print all catalog modules available
