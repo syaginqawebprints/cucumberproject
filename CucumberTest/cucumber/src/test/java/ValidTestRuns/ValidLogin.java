@@ -8,10 +8,11 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/resources/ValidTests", 
-glue= {"ValidTestDefenitions"}
+glue= {"Def_ValidTestDefenitions"}
 		
 		)
 
 public class ValidLogin {
+
 
 }

@@ -1,4 +1,4 @@
-package ValidTestDefenitions;
+package Def_ValidTestDefenitions;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -110,6 +110,7 @@ public void click_on_Catalog_validate_page_catalog_is_open() throws Throwable {
     Assert.assertTrue("Catalog is opened", PageText.contains("Service Categories"));
     
     driver.quit();
+    System.out.println("Test Completed !");
 }
 
 
