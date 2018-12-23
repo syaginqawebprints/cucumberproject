@@ -39,7 +39,7 @@ public class def_addbucket {
 	public void addning_new_bucket() throws Throwable {
 	   WebDriverWait wait=new WebDriverWait(driver, 300);
 	   wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"sp_formfield_IO:ebd902030fc4278ce7fef77ce1050e2a\"]")));
-	   driver.findElement(By.id("s2id_autogen1_search")).sendKeys("Test Bucket");
+	   driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_{{::field.name}}\"]/a")).click();
 	   driver.findElement(By.id("select2-results-1")).click();
 	   driver.findElement(By.id("select2-chosen-2")).click();
 	   driver.findElement(By.id("select2-results-2")).click();

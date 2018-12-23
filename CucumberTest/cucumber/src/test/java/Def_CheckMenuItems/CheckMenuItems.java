@@ -20,10 +20,7 @@ public class CheckMenuItems {
 
 	@Given("^user loges into page$")
 	public void user_loges_into_page() throws Throwable {
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("https://atoscmpdev.service-now.com/cloud_portal");
+		driver = Utils.CommonScripts.openUrl();
 		driver.findElement(By.id("username")).sendKeys("cmp.atos.admin");
 		driver.findElement(By.id("password")).sendKeys("cmp.atos.admin");
 		driver.findElement(By.name("login")).click();
