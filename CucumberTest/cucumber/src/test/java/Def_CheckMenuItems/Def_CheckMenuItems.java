@@ -14,114 +14,169 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 
-public class CheckMenuItems {
+public class Def_CheckMenuItems {
 	
 	WebDriver driver;
 
 	@Given("^user loges into page$")
 	public void user_loges_into_page() throws Throwable {
-		driver = Utils.CommonScripts.openUrl();
-		driver.findElement(By.id("username")).sendKeys("cmp.atos.admin");
-		driver.findElement(By.id("password")).sendKeys("cmp.atos.admin");
-		driver.findElement(By.name("login")).click();
+		driver=Utils.CommonScripts.DoLogin();
 	}
 
 	@Given("^click on manage stock option$")
 	public void click_on_manage_stock_option() throws Throwable {
 		 WebDriverWait wait=new WebDriverWait(driver, 300);
-		 wait.until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText("Manage Stacks")));
-	    driver.findElement(By.partialLinkText("Manage Stacks")).click();
+		 wait.until(ExpectedConditions.visibilityOf(PageObjects.LandingPage.lbl_ManageStacks(driver)));
+		 PageObjects.LandingPage.lbl_ManageStacks(driver).click();
 	}
 
 	@Given("^click on overview menu and check page is open$")
 	public void click_on_overview_menu_and_check_page_is_open() throws Throwable {
-	    driver.findElement(By.xpath("//*[@id=\"xb726f9960b212200eff7ef9bb4673a4b\"]/ul/li[1]/a")).click();
+		PageObjects.ManageStacksPage.menu_Overview(driver).click();
 	    Thread.sleep(2000);
-		String BodyText=driver.findElement(By.tagName("h2")).getText();
+		String BodyText=PageObjects.LandingPage.tag_header(driver).getText();
 		Thread.sleep(500);
-		Assert.assertTrue("Overview page opened!", BodyText.contains("Welcome to the Cloud User Portal"));
-	   
+		try {
+			if(BodyText.contains("Welcome to the Cloud User Portal"))
+			{
+				System.out.println("Case 1 [Check Overview Page Opened] : Paged Opened");
+			}
+			else
+			{
+				System.out.println("Case 1 [Check Overview Page Opened] : Paged Not Opened");
+			}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+			System.out.println("Case 1 [Check Overview Page Opened] : Paged Not Opened");
+	}
+		   
 	    
 	}
 
 	@Given("^click on catalog menu and check page is open$")
 	public void click_on_catalog_menu_and_check_page_is_open() throws Throwable {
-		driver.findElement(By.xpath("//*[@id=\"x84e766440b472200eff7ef9bb4673ad7\"]/div/a")).click();
+		PageObjects.LandingPage.lbl_ManageStacks(driver).click();
 		Thread.sleep(2000);
-	    driver.findElement(By.xpath("//*[@id=\"xb726f9960b212200eff7ef9bb4673a4b\"]/ul/li[2]/a")).click();
+		PageObjects.ManageStacksPage.menu_catalog(driver).click();
 	    Thread.sleep(2000);
 	    WebDriverWait wait=new WebDriverWait(driver, 300);
-	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div/section/main/div/div/sp-page-row/div/div[1]")));
-		String BodyText=driver.findElement(By.xpath("/html/body/div/section/main/div/div/sp-page-row/div/div[1]")).getText();
+	    wait.until(ExpectedConditions.visibilityOf(PageObjects.CatalogPage.lbl_pagetitle(driver)));
+		String BodyText=PageObjects.CatalogPage.lbl_pagetitle(driver).getText();
 		Thread.sleep(3000);
+		
 		try {
-			Assert.assertTrue("Catalog page opened!", BodyText.contains("Service Categories"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			if(BodyText.contains("Service Categories"))
+			{
+				System.out.println("Case 2 [Check Catlog Page Opened] : Paged Opened");
+			}
+			else
+			{
+				System.out.println("Case 2 [Check Catlog Page Opened] : Paged Not Opened");
+			}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+			System.out.println("Case 2 [Check Catlog Page Opened] : Paged Not Opened");
+	}
+		
 	}
 
 	@Given("^click on Stacks menu and check page is open$")
 	public void click_on_Stacks_menu_and_check_page_is_open() throws Throwable {
-	    driver.findElement(By.xpath("//*[@id=\"xb726f9960b212200eff7ef9bb4673a4b\"]/ul/li[3]/a")).click();
+		
+	    PageObjects.ManageStacksPage.menu_Stacks(driver).click();
 	    Thread.sleep(2000);
-		String BodyText=driver.findElement(By.xpath("//*[@id=\"xf66309b50be32200eff7ef9bb4673aaf\"]")).getText();
+		String BodyText=PageObjects.StacksPage.lbl_pagetitle(driver).getText();
 		Thread.sleep(500);
+		
 		try {
-			Assert.assertTrue("Stacks page opened!", BodyText.contains("Catalog Items"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			if(BodyText.contains("Catalog Items"))
+			{
+				System.out.println("Case 3 [Check Stacks Page Opened] : Paged Opened");
+			}
+			else
+			{
+				System.out.println("Case 3 [Check Stacks Page Opened] : Paged Not Opened");
+			}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+			System.out.println("Case 3 [Check Stacks Page Opened] : Paged Not Opened");
+	}
+		
 	}
 
 	@Given("^click on Resources menu and check page is open$")
 	public void click_on_Resources_menu_and_check_page_is_open() throws Throwable {
-	    driver.findElement(By.xpath("//*[@id=\"xb726f9960b212200eff7ef9bb4673a4b\"]/ul/li[4]/a")).click();
+	    PageObjects.ManageStacksPage.menu_resources(driver).click();
 	    Thread.sleep(2000);
-		String BodyText=driver.findElement(By.xpath("//*[@id=\"xb8f1d0fd0bf22200eff7ef9bb4673a2e\"]")).getText();
+		String BodyText=PageObjects.ResourcesPage.lbl_pagetitle(driver).getText();
 		Thread.sleep(500);
+		
 		try {
-			Assert.assertTrue("Resources page opened!", BodyText.contains("Resources"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			if(BodyText.contains("Resources"))
+			{
+				System.out.println("Case 4 [Check Resources Page Opened] : Paged Opened");
+			}
+			else
+			{
+				System.out.println("Case 4 [Check Resources Page Opened] : Paged Not Opened");
+			}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+			System.out.println("Case 4 [Check Resources Page Opened] : Paged Not Opened");
+	}
+
 	}
 
 	@Given("^click on Activities menu and check page is open$")
 	public void click_on_Activities_menu_and_check_page_is_open() throws Throwable {
-	    driver.findElement(By.xpath("//*[@id=\"xb726f9960b212200eff7ef9bb4673a4b\"]/ul/li[5]/a")).click();
+	    PageObjects.ManageStacksPage.menu_activities(driver).click();
 	    Thread.sleep(2000);
-		String BodyText=driver.findElement(By.xpath("//*[@id=\"x32cae7ea0b432200eff7ef9bb4673a18\"]")).getText();
+		String BodyText=PageObjects.ActivitiesPage.lbl_pagetitle(driver).getText();
 		Thread.sleep(500);
+		
 		try {
-			Assert.assertTrue("Activities page opened!", BodyText.contains("Activities"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			if(BodyText.contains("Activities"))
+			{
+				System.out.println("Case 5 [Check Activities Page Opened] : Paged Opened");
+			}
+			else
+			{
+				System.out.println("Case 5 [Check Activities Page Opened] : Paged Not Opened");
+			}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+			System.out.println("Case 5 [Check Activities Page Opened] : Paged Not Opened");
+	}
+
 	}
 
 	@Given("^click on Dashbaord menu and check page is open$")
 	public void click_on_Dashbaord_menu_and_check_page_is_open() throws Throwable {
-	    driver.findElement(By.xpath("//*[@id=\"xb726f9960b212200eff7ef9bb4673a4b\"]/ul/li[6]/a")).click();
+	    PageObjects.ManageStacksPage.menu_dashboard(driver).click();
 	    Thread.sleep(2000);
-		
+	    
 		try {
-			Assert.assertTrue("Dashboard page opened!", driver.findElement(By.id("dashboard")).isDisplayed());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			if(PageObjects.DashboardPage.ifram_dashboard(driver).isDisplayed())
+			{
+				System.out.println("Case 6 [Check Dashboard Page Opened] : Paged Opened");
+			}
+			else
+			{
+				System.out.println("Case 6 [Check Dashboard Page Opened] : Paged Not Opened");
+			}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+			System.out.println("Case 6 [Check Dashboard Page Opened] : Paged Not Opened");
+	}    
+		
+
 	}
 
 	@Given("^Make sure all catalog modules there and print all catalog list$")
 	public void make_sure_all_catalog_modules_there_and_print_all_catalog_list() throws Throwable {
-		driver.findElement(By.xpath("//*[@id=\"xb726f9960b212200eff7ef9bb4673a4b\"]/ul/li[2]/a")).click();
+		PageObjects.ManageStacksPage.menu_catalog(driver).click();
 		Thread.sleep(2000);
-	    WebElement CatalogPage= driver.findElement(By.xpath("/html/body/div[1]/section/main/div/div/sp-page-row/div/div[2]"));
+	    WebElement CatalogPage= PageObjects.CatalogPage.div_catlogitems(driver);
 	    List <WebElement> CatItems= CatalogPage.findElements(By.cssSelector("div[class=\"panel panel-default b\"]"));
 	    System.out.println("Available Catalog List");
 	    System.out.println("----------------------------------------");
@@ -130,12 +185,14 @@ public class CheckMenuItems {
 	    	
 	    	System.out.println(CatItems.get(i).findElement(By.tagName("h4")).getText());
 	    }
+	    
+	    System.out.println("Case 7 [Print All Catalog options] : All Options Printed");
 	}
 
 	@Given("^Go to catalog page and evaluate all available catalog options$")
 	public void go_to_catalog_page_and_evaluate_all_available_catalog_options() throws Throwable {
 		   
-	    WebElement CatalogPage= driver.findElement(By.xpath("/html/body/div[1]/section/main/div/div/sp-page-row/div/div[2]"));
+	    WebElement CatalogPage= PageObjects.CatalogPage.div_catlogitems(driver);
 	    List <WebElement> CatItems= CatalogPage.findElements(By.cssSelector("div[class=\"panel panel-default b\"]"));
 	    
 	    String CatTitle="";

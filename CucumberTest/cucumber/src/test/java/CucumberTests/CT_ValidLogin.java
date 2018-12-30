@@ -1,4 +1,4 @@
-package runners;
+package CucumberTests;
 
 import org.junit.runner.RunWith;
 
@@ -7,11 +7,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/functionalTests", 
-glue= {"stepDefinitions"}
+		features = "src/test/resources/ValidLogin", 
+glue= {"Def_ValidLogin"}
 		
 		)
 
-public class TestRunner {
+public class CT_ValidLogin {
+
 
 }

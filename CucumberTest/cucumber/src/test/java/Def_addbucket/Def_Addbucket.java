@@ -1,4 +1,4 @@
-package def_addbucket;
+package Def_addbucket;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 
-public class def_addbucket {
+public class Def_Addbucket {
 	WebDriver driver;
 	
 	@Given("^click on catalog menu$")

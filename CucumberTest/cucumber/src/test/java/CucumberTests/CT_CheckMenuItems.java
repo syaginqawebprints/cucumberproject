@@ -1,4 +1,4 @@
-package ValidTestRuns;
+package CucumberTests;
 
 import org.junit.runner.RunWith;
 
@@ -7,12 +7,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/ValidTests", 
-glue= {"Def_ValidTestDefenitions"}
+		features = "src/test/resources/CheckMenuItems", 
+glue= {"Def_CheckMenuItems"}
 		
 		)
 
-public class ValidLogin {
+public class CT_CheckMenuItems {
 
 
 }

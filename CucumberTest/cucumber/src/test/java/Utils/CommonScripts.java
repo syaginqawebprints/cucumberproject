@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -53,6 +54,8 @@ public class CommonScripts {
 			break;
 		}
 		long startTime = System.currentTimeMillis();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.get(baseUrl);
 		return driver;
 
@@ -84,6 +87,18 @@ public class CommonScripts {
 		}
 		
 		return baseUrl;
+	}
+
+	// ------GET URL
+	public static WebDriver DoLogin()  {
+		driver=Utils.CommonScripts.openUrl();
+		String UName=readProperty("user.name");
+		String Pwd=readProperty("password");
+		PageObjects.LoginPage.txt_username(driver).sendKeys(UName);
+		PageObjects.LoginPage.txt_password(driver).sendKeys(Pwd);
+		PageObjects.LoginPage.btn_login(driver).click();
+		
+		return driver;
 	}
 
 }
