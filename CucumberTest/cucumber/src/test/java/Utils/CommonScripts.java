@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonScripts {
@@ -27,18 +28,14 @@ public class CommonScripts {
 		String baseUrl = GetURL(environment);
 		String chromeDriverPath = readProperty("chrome.driver.path");
 		String ieDriverPath = readProperty("ie.driver.path");
-		String GhostDriverPath = readProperty("ghost.driver.path");
+		String MozillaDriverPath = readProperty("mozilla.driver.path");
 		String downloadPath = readProperty("file.download.path");
 		switch (browser) {
 		case "Mozilla Firefox":
-			FirefoxProfile profile = new FirefoxProfile();
-			profile.setPreference("browser.download.folderList", 2);
-			profile.setPreference("browser.download.dir", downloadPath);
-			profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
-					"application/pdf");
-			profile.setPreference("pdfjs.disabled", true);
-
-			//driver = new FirefoxDriver(profile);
+			System.setProperty("webdriver.gecko.driver", MozillaDriverPath);
+			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+	        capabilities.setCapability("marionette", true);
+	        driver = new FirefoxDriver();
 			break;
 		case "Google Chrome":
 			System.setProperty("webdriver.chrome.driver", chromeDriverPath);

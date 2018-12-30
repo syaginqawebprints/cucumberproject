@@ -1,0 +1,41 @@
+We can update the Test Settings by updating the testsettings.properties file
+
+test.environment=Development
+//This defines the test enviroment we can change it to Test / Development / Production, based on this we are selecting the URL for testing
+
+test.url=https://atoscmpdev.service-now.com/cloud_portal
+// We can specify the Test environment URL here
+
+
+dev.url=https://atoscmpdev.service-now.com/cloud_portal
+// We can specify the Development environment URL here
+
+
+live.url=https://atoscmpdev.service-now.com/cloud_portal
+// We can specify the Production environment URL here
+
+
+browser=Google Chrome
+// We can give the browser name here like Mozilla Firefox / Google Chrome / Internet Explorer
+
+
+user.name=cmp.atos.admin
+// Give valid user name here
+
+
+password=cmp.atos.admin
+// Give valid password here
+
+waiting.time=5
+sleep.time=500
+// These are default waiting times
+
+chrome.driver.path=WebDrivers/chromedriver.exe
+// Give chrome driver path here
+
+ie.driver.path=WebDrivers/IEDriverServer.exe
+// Give IE driver path here
+
+
+mozilla.driver.path=WebDrivers/geckodriver.exe
+// Give Firefox driver path here
