@@ -66,24 +66,29 @@ public class Def_Addbucket {
 	public void check_the_Status_and_print_message() throws Throwable {
 		
 	 
-			WebDriverWait wait=new WebDriverWait(driver, 300);
-			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			Thread.sleep(3000);
-			wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
-			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
-			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
-			if (RequestStatusMessage.contains("Failed "))
-			{
-				System.out.println("Operation failed");
+			try {
+				WebDriverWait wait=new WebDriverWait(driver, 300);
+				wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+				Thread.sleep(3000);
+				wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
+				String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
+				String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+				if (RequestStatusMessage.contains("Failed "))
+				{
+					System.out.println("Operation failed");
+					System.out.println(RequestStatusMessage);
+				}
+				else if (RequestStatusMessage.contains("Success "))
+				{
+					System.out.println("Operation Success");
+					System.out.println(RequestStatusMessage);
+				}
+				
 				System.out.println(RequestStatusMessage);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+			//	e.printStackTrace();
 			}
-			else if (RequestStatusMessage.contains("Success "))
-			{
-				System.out.println("Operation Success");
-				System.out.println(RequestStatusMessage);
-			}
-			
-			System.out.println(RequestStatusMessage);
 	    
 	}
 	
