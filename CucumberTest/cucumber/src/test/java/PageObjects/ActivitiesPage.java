@@ -13,4 +13,16 @@ public class ActivitiesPage {
 		element = driver.findElement(By.xpath("//*[@id=\"x32cae7ea0b432200eff7ef9bb4673a18\"]"));
 		return element;
 	}
+	
+	//Request Status Message
+	public static WebElement lbl_requestmessage(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"myTabContent\"]/div/div/div/div[1]/div/div/div[2]"));
+		return element;
+	}
+	
+	//Stack Status Message
+	public static WebElement lbl_stackmessage(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"myTabContent\"]/div/div/div/div[2]/div/div/div[2]"));
+		return element;
+	}
 }

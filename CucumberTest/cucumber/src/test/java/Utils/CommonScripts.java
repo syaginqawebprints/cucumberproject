@@ -98,4 +98,29 @@ public class CommonScripts {
 		return driver;
 	}
 
+	// Random Text Generation
+	public static String RandomText(int len) {
+		String text = "";
+
+		String charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+		for (int i = 0; i < len; i++)
+			text += charset.charAt((int) Math.floor(Math.random()
+					* charset.length()));
+
+		return text;
+	}
+	
+	// Random Small Text Generation
+	public static String RandomSmallText(int len) {
+		String text = "";
+
+		String charset = "abcdefghijklmnopqrstuvwxyz";
+
+		for (int i = 0; i < len; i++)
+			text += charset.charAt((int) Math.floor(Math.random()
+					* charset.length()));
+
+		return text;
+	}
 }

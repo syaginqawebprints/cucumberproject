@@ -59,5 +59,13 @@ public class LandingPage {
 		return element;
 	    
 	}	
+	
+	//Header Loader
+	public static WebElement div_HeadLoader(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"xdddd43ddc3212200f7d1ca3adfba8f17\"]/div"));
+		return element;
+	    
+	}		
+	
 	 
 }

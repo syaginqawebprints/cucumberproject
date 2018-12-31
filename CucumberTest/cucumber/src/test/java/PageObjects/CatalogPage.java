@@ -24,6 +24,10 @@ public class CatalogPage {
 		element =driver.findElement(By.xpath("/html/body/div[1]/section/main/div/div/sp-page-row/div/div[2]"));
 		return element;
 	}
+	//Bucket Resource Link
+	public static WebElement link_bucketresource(WebDriver driver) {
+		element =driver.findElement(By.xpath("//*[@id=\"x4c6cbea60b212200eff7ef9bb4673a29\"]/div/div/div[2]/div[2]"));
+		return element;
+	}	
 	
-
 }

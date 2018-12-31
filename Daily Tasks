@@ -64,7 +64,7 @@ Show me steps:
  All menu icons like : Overview, Catalog, Stack, Resources, Activities Dashboard  need to validate, click on it and validate if page open and correct page
  
  
- Task 8  not done
+ Task 8  done
  
  Go to catalog page and evaluate all available catalog option/modules.
  Make sure all catalog modules there, and print all catalog list
@@ -88,6 +88,7 @@ Need to go to catalog page and get validate all modules ib catalog exists, pleas
 and make search on UMOS module, and print "UMOS" module is not present  if not present..
 
 Task11!! Please update all test cases after complete test close browser!!! after few test runs i have 6 open browsers!
+// I have fixed this issue.
 
 Task 11
 All test environment links and credentials MUST be in separate file:
