@@ -69,15 +69,14 @@ Show me steps:
  Go to catalog page and evaluate all available catalog option/modules.
  Make sure all catalog modules there, and print all catalog list
  
- Task 9 ( probab;ly you will need to go on it with me..)  not done
+ Task 9 ( probab;ly you will need to go on it with me..)  done
  Go to catalog,  select Bucket module, and add bucket.
  ( just select one of the options from any available from the drop down list and create one, and verify in status page its created.
  Print status if complete.
 
-Task - 9 is in progress, 
+Task - 9 done
 
------ I have updated the project structure to Edit the URL and other settings, I have pushed that code and I am working on task 9, I am facing an issue to loacte an element. I will update the code once I finish  thanks....
-
+----- I have updated the project structure to Edit the URL and other settings, I have pushed that code and I have completed the task 9
 ------------------------
  
 
@@ -94,4 +93,9 @@ Task 11
 All test environment links and credentials MUST be in separate file:
 Config Test file or something like this
 So every time run test it will take info from that file, and no need to change in every single test URL's and password etc..
+- Completed this task
+
+I am waiting for new task
+
+Thanks
 
