@@ -101,3 +101,10 @@ Thanks
 
 You can run the TC_TestNames to get all available tests
 
+Task 12
+Need to have a steps, test cases run on demand( we have option to start mvn test  etc 
+for run from CMD, but need some ifo how to select test( open from left tree folder /src/test/ and right mouse click on test or something easy to understand 
+
+Please create some help in readme or something..  how to run, or // commented test cases from the list  not to have in run..
+or maybe select a new test suite and add test cases to run  etc
+
