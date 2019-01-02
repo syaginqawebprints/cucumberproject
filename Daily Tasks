@@ -2,10 +2,14 @@ task1
 We need to make it install from GitHub, and updates from git pull command from CMD
 Please add info to the file  with steps how to use github command from CMD or other tool you use)
 
+<<Please provide it in the file or add informations here where file with such onfo!!>>>>
+
 task2
 mvn need to be used for build/clean from cmd
 Same here, we have a doc, but need to add a few command  for example mvn clean, mvn build , mvn test  to make sure commnds works and where user 
 should use those commands, from which location)
+
+<Please test if mvn clean , build install commands works( or add commands we will use..>>>>
 
 task3
 structure of test need to be :
@@ -15,6 +19,9 @@ test_name_regression
 test_name_bug#
 No hard coded paths etc..
 Dont see if its ready.. and need your input here...
+
+<< I need to see path to tset cases where cases located and path to them>>>  add it in readme  file>>>
+
 
 Task # 4
 Login with valid credentials
@@ -27,6 +34,8 @@ Page open , validate page catalot is open.
 
 Looks like its complete( but its not working anymore.. JAVA error)
 
+Complete
+
 
 ---- Syagin Written-----
 This task completed, to run the specific test, we need to give the test command as follows 
@@ -36,15 +45,20 @@ mvn test -Dtest=ValidLogin
 
 Not working  error in maven...!!
 
+Complete
+
 Task5  
 
 When Task complete  close browser and print Test Clpmplete. - Task completed
+
+Complete
 
 Task 6 provide steps  how to remove / disable test what user whant to skip /or just not to run at this time
 Show me steps:
  1. go to src.. select file... use // before the test etc..
  
  Did you work on this one?
+ <Please update info, >>>>>>>>>>>>>>>>>>>.
  
  
  
@@ -55,7 +69,9 @@ Show me steps:
  run command : git pull  ( or git co?) and when its complte  run mvn test command:
  mvn clean, mvn build, mvn test(name test)
  
- This is a very critical!!!
+ This is a very critical!!!  Still not clear!!!
+ <  Need steps  to use>>>>>>>>>>>>>>  some error when i run mvn clean
+ 
  
  
  
@@ -63,18 +79,32 @@ Show me steps:
  
  All menu icons like : Overview, Catalog, Stack, Resources, Activities Dashboard  need to validate, click on it and validate if page open and correct page
  
+ <<<<<<<Complete ?  do we have a print of menu we test?>>>>>>>>>>>>>
+ 
  
  Task 8  done
  
  Go to catalog page and evaluate all available catalog option/modules.
  Make sure all catalog modules there, and print all catalog list
  
+<<<<<<< HEAD
  Task 9 ( probab;ly you will need to go on it with me..)  done
+=======
+ Complete
+ 
+ Task 9 ( probab;ly you will need to go on it with me..)  not done
+>>>>>>> 5cbf170a6a3001f5fce09e04f2e6c6c62de66b6c
  Go to catalog,  select Bucket module, and add bucket.
  ( just select one of the options from any available from the drop down list and create one, and verify in status page its created.
  Print status if complete.
 
+<<<<<<< HEAD
 Task - 9 done
+=======
+Task - 9 is in progress,   STILL NOT COMPLETE!!!!!
+
+----- I have updated the project structure to Edit the URL and other settings, I have pushed that code and I am working on task 9, I am facing an issue to loacte an element. I will update the code once I finish  thanks....
+>>>>>>> 5cbf170a6a3001f5fce09e04f2e6c6c62de66b6c
 
 ----- I have updated the project structure to Edit the URL and other settings, I have pushed that code and I have completed the task 9
 ------------------------
@@ -86,8 +116,11 @@ Please check recording from skype.
 Need to go to catalog page and get validate all modules ib catalog exists, please print all catalog modules available
 and make search on UMOS module, and print "UMOS" module is not present  if not present..
 
+NOT COMPLETE
+
 Task11!! Please update all test cases after complete test close browser!!! after few test runs i have 6 open browsers!
 // I have fixed this issue.
+Complete
 
 Task 11
 All test environment links and credentials MUST be in separate file:
@@ -101,10 +134,20 @@ Thanks
 
 You can run the TC_TestNames to get all available tests
 
+Complete  but need info what to select and whet is by default!!!>
+
 Task 12
 Need to have a steps, test cases run on demand( we have option to start mvn test  etc 
 for run from CMD, but need some ifo how to select test( open from left tree folder /src/test/ and right mouse click on test or something easy to understand 
 
 Please create some help in readme or something..  how to run, or // commented test cases from the list  not to have in run..
 or maybe select a new test suite and add test cases to run  etc
+
+NOT COMPLETE
+
+Task 13
+Create new Virtual Service and verify its been created..
+Complete all required fields
+NAme of the group or test environment use SIMILAR model: < TestVM_day_time> in this case it will never be a same name)
+
 
