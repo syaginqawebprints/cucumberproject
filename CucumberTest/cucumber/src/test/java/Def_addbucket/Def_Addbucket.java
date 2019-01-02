@@ -46,14 +46,16 @@ public class Def_Addbucket {
 		   Select Location = new Select(PageObjects.BucketResourcePage.cmb_location(driver));
 		   Location.selectByVisibleText("AWS Datacenter - eu-west-1");
 		   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		   PageObjects.BucketResourcePage.txt_stackname(driver).sendKeys(Utils.CommonScripts.RandomSmallText(10));
+		   PageObjects.BucketResourcePage.txt_stackname(driver).sendKeys("addbuckettest-"+Utils.CommonScripts.GetDateTime());
 		   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		   js.executeScript("arguments[0].click();", PageObjects.BucketResourcePage.cmbval_usergroup(driver));
 		   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		   PageObjects.BucketResourcePage.txt_bucketname(driver).sendKeys(Utils.CommonScripts.RandomSmallText(10));
+		   PageObjects.BucketResourcePage.txt_bucketname(driver).sendKeys("addbuckettest-"+Utils.CommonScripts.GetDateTime());
 		   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		   js.executeScript("arguments[0].click();",PageObjects.BucketResourcePage.btn_bucketsubmit(driver));
 		   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		   wait.until(ExpectedConditions.visibilityOf(PageObjects.ActivitiesPage.img_stackgreentick(driver)));
+		   
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		//e.printStackTrace();
@@ -68,17 +70,17 @@ public class Def_Addbucket {
 	 
 			try {
 				WebDriverWait wait=new WebDriverWait(driver, 300);
-				wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 				Thread.sleep(3000);
 				wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
+				wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "View stack details"));
 				String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
 				String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
-				if (RequestStatusMessage.contains("Failed "))
+				if (RequestStatusMessage.contains("Failed"))
 				{
 					System.out.println("Operation failed");
 					System.out.println(RequestStatusMessage);
 				}
-				else if (RequestStatusMessage.contains("Success "))
+				else if (RequestStatusMessage.contains("Success"))
 				{
 					System.out.println("Operation Success");
 					System.out.println(RequestStatusMessage);
@@ -87,7 +89,7 @@ public class Def_Addbucket {
 				System.out.println(RequestStatusMessage);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-			//	e.printStackTrace();
+			//e.printStackTrace();
 			}
 	    
 	}
@@ -95,13 +97,13 @@ public class Def_Addbucket {
 	@Given("^close the browser$")
 	public void close_the_browser() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    driver.quit();
+		driver.quit();
 	}
 
 	@Given("^Print test finished$")
 	public void print_test_finished() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Test finished");
+		System.out.println("Test Completed");
 	}
 
 

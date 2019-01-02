@@ -20,9 +20,23 @@ public class ActivitiesPage {
 		return element;
 	}
 	
+	//Request Status Message ID
+	public static WebElement lbl_requestmessages(WebDriver driver) {
+		element = driver.findElement(By.id("list_items"));
+		return element;
+	}
+	
+	
 	//Stack Status Message
 	public static WebElement lbl_stackmessage(WebDriver driver) {
 		element = driver.findElement(By.xpath("//*[@id=\"myTabContent\"]/div/div/div/div[2]/div/div/div[2]"));
 		return element;
 	}
+	
+	//Stack Status Tick Mark
+	public static WebElement img_stackgreentick(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"myTabContent\"]/div/div/div/div[2]/div/div/div[2]/div/div/div/div/div/img"));
+		return element;
+	}
+	
 }

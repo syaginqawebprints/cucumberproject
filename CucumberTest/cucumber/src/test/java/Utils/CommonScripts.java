@@ -3,6 +3,8 @@ package Utils;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -136,4 +138,16 @@ public class CommonScripts {
 
 		return text;
 	}
+	
+	// Generate Date and Time
+	public static String GetDateTime() {
+		String text = "";
+
+		   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy-HH-mm-ss");  
+		   LocalDateTime now = LocalDateTime.now();  
+		   text=dtf.format(now);  
+		return text;
+	}
+	
+
 }
