@@ -1,11 +1,21 @@
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\ValidTests\ValidLogin.java
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\stepDefinitions\Steps.java
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\runners\TestRunner.java
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\Def_CheckMenuItems\CheckMenuItems.java
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\seleniumTests\e2e_test.java
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\def_addbucket\def_addbucket.java
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\ValidTests\CheckMenuItems.java
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\ValidTestRuns\CheckMenuItems.java
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\ValidTestRuns\ValidLogin.java
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\Def_ValidTestDefenitions\ValidLogin.java
-E:\Cucumber Project\CucumberTest\cucumber\src\test\java\ValidTestRuns\addbucket.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\Utils\CommonScripts.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\StacksPage.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\Def_addbucket\Def_Addbucket.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\FunctionalCases\FC_InvalidLogin.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\CucumberTests\CT_Addbucket.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\CatalogPage.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\LoginPage.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\CucumberTests\CT_ValidLogin.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\FunctionalCases\FC_ValidLogin.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\Def_InvalidLogin\Def_InvalidLogin.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\LandingPage.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\ManageStacksPage.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\Def_ValidLogin\Def_ValidLogin.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\FunctionalCases\FC_CheckMenuItems.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\Def_CheckMenuItems\Def_CheckMenuItems.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\CucumberTests\CT_InvalidLogin.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\DashboardPage.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\ActivitiesPage.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\CucumberTests\CT_CheckMenuItems.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\BucketResourcePage.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\ResourcesPage.java

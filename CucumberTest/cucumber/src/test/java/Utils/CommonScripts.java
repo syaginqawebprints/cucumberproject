@@ -24,24 +24,37 @@ public class CommonScripts {
 
 	public static WebDriver openUrl() {
 		String browser = readProperty("browser");
+		int browserno=0;
+		if (browser.contains("Mozilla Firefox"))
+		{
+			browserno=1;
+		}
+		else if (browser.contains("Google Chrome"))
+		{
+			browserno=2;
+		}
+		else if (browser.contains("Internet Explorer"))
+		{
+			browserno=3;
+		}
 		String environment = readProperty("test.environment");
 		String baseUrl = GetURL(environment);
 		String chromeDriverPath = readProperty("chrome.driver.path");
 		String ieDriverPath = readProperty("ie.driver.path");
 		String MozillaDriverPath = readProperty("mozilla.driver.path");
 		String downloadPath = readProperty("file.download.path");
-		switch (browser) {
-		case "Mozilla Firefox":
+		switch (browserno) {
+		case 1:
 			System.setProperty("webdriver.gecko.driver", MozillaDriverPath);
 			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 	        capabilities.setCapability("marionette", true);
 	        driver = new FirefoxDriver();
 			break;
-		case "Google Chrome":
+		case 2:
 			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 			driver = new ChromeDriver();
 			break;
-		case "Internet Explorer":
+		case 3:
 			System.setProperty("webdriver.ie.driver", ieDriverPath);
 			driver = new InternetExplorerDriver();
 			break;
