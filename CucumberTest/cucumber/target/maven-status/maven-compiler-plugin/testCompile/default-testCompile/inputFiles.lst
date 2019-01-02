@@ -2,7 +2,10 @@ C:\CucumberGIT\CucumberTest\cucumber\src\test\java\Utils\CommonScripts.java
 C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\StacksPage.java
 C:\CucumberGIT\CucumberTest\cucumber\src\test\java\Def_addbucket\Def_Addbucket.java
 C:\CucumberGIT\CucumberTest\cucumber\src\test\java\FunctionalCases\FC_InvalidLogin.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\FunctionalCases\FC_TestNames.java
 C:\CucumberGIT\CucumberTest\cucumber\src\test\java\CucumberTests\CT_Addbucket.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\CucumberTests\CT_TestNames.java
+C:\CucumberGIT\CucumberTest\cucumber\src\test\java\Def_TestNames\Def_TestNames.java
 C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\CatalogPage.java
 C:\CucumberGIT\CucumberTest\cucumber\src\test\java\PageObjects\LoginPage.java
 C:\CucumberGIT\CucumberTest\cucumber\src\test\java\CucumberTests\CT_ValidLogin.java
