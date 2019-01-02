@@ -87,17 +87,26 @@ Show me steps:
  Go to catalog page and evaluate all available catalog option/modules.
  Make sure all catalog modules there, and print all catalog list
  
+<<<<<<< HEAD
+ Task 9 ( probab;ly you will need to go on it with me..)  done
+=======
  Complete
  
  Task 9 ( probab;ly you will need to go on it with me..)  not done
+>>>>>>> 5cbf170a6a3001f5fce09e04f2e6c6c62de66b6c
  Go to catalog,  select Bucket module, and add bucket.
  ( just select one of the options from any available from the drop down list and create one, and verify in status page its created.
  Print status if complete.
 
+<<<<<<< HEAD
+Task - 9 done
+=======
 Task - 9 is in progress,   STILL NOT COMPLETE!!!!!
 
 ----- I have updated the project structure to Edit the URL and other settings, I have pushed that code and I am working on task 9, I am facing an issue to loacte an element. I will update the code once I finish  thanks....
+>>>>>>> 5cbf170a6a3001f5fce09e04f2e6c6c62de66b6c
 
+----- I have updated the project structure to Edit the URL and other settings, I have pushed that code and I have completed the task 9
 ------------------------
  
 
@@ -117,6 +126,13 @@ Task 11
 All test environment links and credentials MUST be in separate file:
 Config Test file or something like this
 So every time run test it will take info from that file, and no need to change in every single test URL's and password etc..
+- Completed this task
+
+I am waiting for new task
+
+Thanks
+
+You can run the TC_TestNames to get all available tests
 
 Complete  but need info what to select and whet is by default!!!>
 
