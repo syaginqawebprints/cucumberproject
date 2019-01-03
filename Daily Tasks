@@ -150,4 +150,10 @@ Create new Virtual Service and verify its been created..
 Complete all required fields
 NAme of the group or test environment use SIMILAR model: < TestVM_day_time> in this case it will never be a same name)
 
+Task 14 create a new SnapShot
+Complete all required fields  with first select AWS environment
+make sure it will complete and startus complete in activity page
+
+
+
 
