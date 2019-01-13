@@ -127,6 +127,7 @@ All test environment links and credentials MUST be in separate file:
 Config Test file or something like this
 So every time run test it will take info from that file, and no need to change in every single test URL's and password etc..
 - Completed this task
+Task Still not work!! I select a different link and password , still used old user name and password!!!
 
 I am waiting for new task
 
