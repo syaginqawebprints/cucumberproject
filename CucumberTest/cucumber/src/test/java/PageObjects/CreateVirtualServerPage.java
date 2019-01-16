@@ -293,7 +293,7 @@ public class CreateVirtualServerPage {
 	
 	//Security Group Text box
 	public static WebElement txt_SecurityGroup(WebDriver driver) {
-		element = driver.findElement(By.id("//*[@id=\"s2id_autogen31\"]"));
+		element = driver.findElement(By.id("//*[@id=\"s2id_sp_formfield_Virtual_Server_SecurityGroupArray\"]"));
 		return element;
 	}
 	
