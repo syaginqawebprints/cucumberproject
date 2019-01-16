@@ -20,7 +20,7 @@ test_name_bug#
 No hard coded paths etc..
 Dont see if its ready.. and need your input here...
 
-<< I need to see path to tset cases where cases located and path to them>>>  add it in readme  file>>>
+<< I need to see path to tset cases where cases located and path to them>>>  add it in readme  file>>> can we creates a test suites ?
 
 
 Task # 4
@@ -108,7 +108,7 @@ Task - 9 is in progress,   STILL NOT COMPLETE!!!!!
 
 ----- I have updated the project structure to Edit the URL and other settings, I have pushed that code and I have completed the task 9
 ------------------------
- 
+ <<< task 9 create bucket completed! DS verified>>>>
 
 Task 10  not done
 
@@ -149,5 +149,13 @@ Task 13
 Create new Virtual Service and verify its been created..
 Complete all required fields
 NAme of the group or test environment use SIMILAR model: < TestVM_day_time> in this case it will never be a same name)
+
+Task 14 create a new SnapShot  This one easy to build make it first next select task 13..!!!
+Complete all required fields  with first select AWS environment
+make sure it will complete and startus complete in activity page
+
+// Create snapshot completed, working on Virtual Service, << COMPLETE, VErified! DS>>>
+
+
 
 
