@@ -80,16 +80,22 @@ public class Def_CreateAWSVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.txt_Key(driver).sendKeys("key-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		Thread.sleep(2000);	
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.txt_Value(driver).sendKeys("value-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectBackup(driver, "Cloud");
+		Thread.sleep(2000);	
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectBackupPolicy(driver, "Reboot");
+		PageObjects.CreateVirtualServerPage.SelectBackup(driver, "EMC");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_cloudID(driver).sendKeys("cloudid-"+Utils.CommonScripts.GetDateTime());
+		PageObjects.CreateVirtualServerPage.SelectBackupPolicy(driver, "SQL");
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		PageObjects.CreateVirtualServerPage.txt_cloudID(driver).sendKeys("Atos-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.SelectBDisasterRecovery(driver, "Yes");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		PageObjects.CreateVirtualServerPage.SelectDRRegion(driver, "AWS");
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));		
 		PageObjects.CreateVirtualServerPage.btn_Submit(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		
