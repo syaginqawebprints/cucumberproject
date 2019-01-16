@@ -123,7 +123,7 @@ public class Def_CreateAWSVirtualServer {
 			
 			System.out.println(RequestStatusMessage);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 		//e.printStackTrace();
 		}
 	}

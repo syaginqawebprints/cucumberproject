@@ -578,7 +578,7 @@ public class CreateVirtualServerPage {
 		return element;
 	}
 	
-	//Select DR Region
+	//Select DR Regions
 	public static void  SelectDRRegion(WebDriver driver, String ServerTxt) throws InterruptedException {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
