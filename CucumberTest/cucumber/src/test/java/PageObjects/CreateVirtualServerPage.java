@@ -224,7 +224,7 @@ public class CreateVirtualServerPage {
 
 	//Image Drop Down
 	public static WebElement cmb_Image(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_{{::field.name}}\"]/a"));
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-13\"]"));
 		return element;
 	}
 	
@@ -247,7 +247,7 @@ public class CreateVirtualServerPage {
 	
 	//Virtual Network Drop Down
 	public static WebElement cmb_VirtualNetwork(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_{{::field.name}}\"]/a"));
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-9\"]"));
 		return element;
 	}
 	
@@ -270,7 +270,7 @@ public class CreateVirtualServerPage {
 	
 	//Subnet Drop Down
 	public static WebElement cmb_Subnet(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_{{::field.name}}\"]/a"));
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-14\"]"));
 		return element;
 	}
 	
@@ -316,7 +316,7 @@ public class CreateVirtualServerPage {
 	
 	//SSH Key Name Drop Down
 	public static WebElement cmb_SSHKeyName(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_{{::field.name}}\"]/a"));
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-15\"]"));
 		return element;
 	}
 	
@@ -354,7 +354,7 @@ public class CreateVirtualServerPage {
 		
 	//Additional Tagging Drop Down
 	public static WebElement cmb_AdditionalTagging(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_{{::field.name}}\"]/a"));
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-28\"]"));
 		return element;
 	}
 	
@@ -377,7 +377,7 @@ public class CreateVirtualServerPage {
 	
 	//Maintenance Options Drop Down
 	public static WebElement cmb_MaintenanceOptions(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_{{::field.name}}\"]/a"));
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-22\"]"));
 		return element;
 	}
 	
@@ -424,7 +424,7 @@ public class CreateVirtualServerPage {
 	
 	//Backup Drop Down
 	public static WebElement cmb_Backup(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_{{::field.name}}\"]/a"));
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-23\"]"));
 		return element;
 	}
 	
@@ -447,7 +447,7 @@ public class CreateVirtualServerPage {
 	
 	//Backup Policy Drop Down
 	public static WebElement cmb_BackupPolicy(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_{{::field.name}}\"]/a"));
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-24\"]"));
 		return element;
 	}
 	
@@ -477,7 +477,7 @@ public class CreateVirtualServerPage {
 	
 	//Disaster Recovery Drop Down
 	public static WebElement cmb_DisasterRecovery(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_{{::field.name}}\"]/a"));
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-25\"]"));
 		return element;
 	}
 	
