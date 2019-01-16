@@ -32,6 +32,11 @@ public class CatalogPage {
 
 	//Create Snapshot Link
 	public static WebElement link_snapshot(WebDriver driver) {
+<<<<<<< HEAD
+		element =driver.findElement(By.xpath("//*[@id=\"x4c6cbea60b212200eff7ef9bb4673a29\"]/div/div/div[2]/div[11]/div/a"));
+		return element;
+	}	
+=======
 		element =driver.findElement(By.xpath("//*[contains(text(), 'Create Snapshot')]"));
 		return element;
 	}	
@@ -41,5 +46,6 @@ public class CatalogPage {
 		element =driver.findElement(By.xpath("//*[contains(text(), 'Create Virtual Server')]"));
 		return element;
 	}
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	
 }

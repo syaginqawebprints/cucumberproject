@@ -24,7 +24,10 @@ public class CreateVirtualServerPage {
 	public static void  SelectDataCenter(WebDriver driver, String ServerTxt) throws InterruptedException {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
 		PageObjects.CreateVirtualServerPage.cmb_LogicalDatacenterDropDown(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(1000);		
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-1\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -35,8 +38,12 @@ public class CreateVirtualServerPage {
 	          }	 
 	       }
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+<<<<<<< HEAD
+	       Thread.sleep(2000);	
+=======
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Environment  Drop-down
@@ -51,7 +58,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.cmb_Environment(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(1000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-6\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -61,9 +71,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Region Drop Down
@@ -78,7 +91,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.cmb_Region(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(1000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -88,9 +104,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 
 
@@ -114,7 +133,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.cmb_UserGroup(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(1000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -124,9 +146,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Managed OS Drop Down
@@ -141,7 +166,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.cmb_ManagedOS(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(1000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-7\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -151,9 +179,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Never Expire Drop Down
@@ -168,7 +199,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.cmb_NeverExpire(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(1000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-4\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -178,9 +212,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 
 	
@@ -202,7 +239,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.cmb_Application(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-30\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -212,9 +252,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Provision Tab button
@@ -236,7 +279,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.cmb_ComputeProfile(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-8\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -246,9 +292,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 
@@ -263,9 +312,13 @@ public class CreateVirtualServerPage {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
+<<<<<<< HEAD
+		PageObjects.CreateVirtualServerPage.cmb_Image(driver).click();
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.cmb_Image(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-13\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -275,9 +328,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Virtual Network Drop Down
@@ -290,10 +346,15 @@ public class CreateVirtualServerPage {
 	public static void  SelectVirtualNetwork(WebDriver driver, String ServerTxt) throws InterruptedException {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+<<<<<<< HEAD
+		Thread.sleep(2000);	
+		PageObjects.CreateVirtualServerPage.cmb_VirtualNetwork(driver).click();
+=======
 		Thread.sleep(3000);	
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.cmb_VirtualNetwork(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-9\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -303,9 +364,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Subnet Drop Down
@@ -318,10 +382,15 @@ public class CreateVirtualServerPage {
 	public static void  SelectSubnet(WebDriver driver, String ServerTxt) throws InterruptedException {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+<<<<<<< HEAD
+		Thread.sleep(2000);	
+		PageObjects.CreateVirtualServerPage.cmb_Subnet(driver).click();
+=======
 		Thread.sleep(3000);	
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.cmb_Subnet(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-14\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -331,14 +400,21 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Security Group Text box
 	public static WebElement txt_SecurityGroup(WebDriver driver) {
+<<<<<<< HEAD
+		element = driver.findElement(By.id("//*[@id=\"s2id_sp_formfield_Virtual_Server_SecurityGroupArray\"]"));
+=======
 		element = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_Virtual_Server_SecurityGroupArray\"]"));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		return element;
 	}
 	
@@ -348,7 +424,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.txt_SecurityGroup(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"s2id_autogen31_results\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -358,9 +437,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(2000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//SSH Key Name Drop Down
@@ -373,9 +455,14 @@ public class CreateVirtualServerPage {
 	public static void  SelectSSHKeyName(WebDriver driver, String ServerTxt) throws InterruptedException {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+<<<<<<< HEAD
+		Thread.sleep(2000);	
+		PageObjects.CreateVirtualServerPage.cmb_SSHKeyName(driver).click();
+=======
 		Thread.sleep(3000);	
 		PageObjects.CreateVirtualServerPage.cmb_SSHKeyName(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-15\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -385,9 +472,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	
@@ -417,7 +507,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.cmb_AdditionalTagging(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-28\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -427,9 +520,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Maintenance Options Drop Down
@@ -442,10 +538,15 @@ public class CreateVirtualServerPage {
 	public static void  SelectMaintenanceOptions(WebDriver driver, String ServerTxt) throws InterruptedException {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+<<<<<<< HEAD
+		Thread.sleep(2000);	
+		PageObjects.CreateVirtualServerPage.cmb_MaintenanceOptions(driver).click();
+=======
 		Thread.sleep(3000);	
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.cmb_MaintenanceOptions(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-22\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -455,9 +556,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Add Tags button
@@ -496,7 +600,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.cmb_Backup(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-23\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -506,9 +613,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	//Backup Policy Drop Down
@@ -522,8 +632,12 @@ public class CreateVirtualServerPage {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
+<<<<<<< HEAD
+		PageObjects.CreateVirtualServerPage.cmb_Backup(driver).click();
+=======
 		PageObjects.CreateVirtualServerPage.cmb_BackupPolicy(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-24\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -533,9 +647,12 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	}
 	
 	
@@ -557,7 +674,10 @@ public class CreateVirtualServerPage {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		PageObjects.CreateVirtualServerPage.cmb_DisasterRecovery(driver).click();
+<<<<<<< HEAD
+=======
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-25\"]"));
 		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
@@ -567,6 +687,10 @@ public class CreateVirtualServerPage {
 	             break;	 
 	          }	 
 	       }
+<<<<<<< HEAD
+	}
+	
+=======
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
@@ -600,6 +724,7 @@ public class CreateVirtualServerPage {
 	}
 	
 	
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 	//Submit Button
 	public static WebElement btn_Submit(WebDriver driver) {
 		element = driver.findElement(By.xpath("//*[@id=\"catItemSubmit\"]"));

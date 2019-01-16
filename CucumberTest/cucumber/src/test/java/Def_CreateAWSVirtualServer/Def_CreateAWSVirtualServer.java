@@ -80,6 +80,18 @@ public class Def_CreateAWSVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.txt_Key(driver).sendKeys("key-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+<<<<<<< HEAD
+		PageObjects.CreateVirtualServerPage.txt_Value(driver).sendKeys("value-"+Utils.CommonScripts.GetDateTime());
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		PageObjects.CreateVirtualServerPage.SelectBackup(driver, "Cloud");
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		PageObjects.CreateVirtualServerPage.SelectBackupPolicy(driver, "Reboot");
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		PageObjects.CreateVirtualServerPage.txt_cloudID(driver).sendKeys("cloudid-"+Utils.CommonScripts.GetDateTime());
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		PageObjects.CreateVirtualServerPage.SelectBDisasterRecovery(driver, "Yes");
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+=======
 		Thread.sleep(2000);	
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.txt_Value(driver).sendKeys("value-"+Utils.CommonScripts.GetDateTime());
@@ -96,6 +108,7 @@ public class Def_CreateAWSVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.SelectDRRegion(driver, "AWS");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));		
+>>>>>>> f3ed80699fd51abf36cce9bedad5c2b05a6bf21d
 		PageObjects.CreateVirtualServerPage.btn_Submit(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		
