@@ -108,7 +108,7 @@ Task - 9 is in progress,   STILL NOT COMPLETE!!!!!
 
 ----- I have updated the project structure to Edit the URL and other settings, I have pushed that code and I have completed the task 9
 ------------------------
- 
+ <<< task 9 create bucket completed! DS verified>>>>
 
 Task 10  not done
 
@@ -127,6 +127,7 @@ All test environment links and credentials MUST be in separate file:
 Config Test file or something like this
 So every time run test it will take info from that file, and no need to change in every single test URL's and password etc..
 - Completed this task
+Task Still not work!! I select a different link and password , still used old user name and password!!!
 
 I am waiting for new task
 
@@ -154,7 +155,7 @@ Task 14 create a new SnapShot  This one easy to build make it first next select 
 Complete all required fields  with first select AWS environment
 make sure it will complete and startus complete in activity page
 
-// Create snapshot completed, working on Virtual Service
+// Create snapshot completed, working on Virtual Service, << COMPLETE, VErified! DS>>>
 
 
 
