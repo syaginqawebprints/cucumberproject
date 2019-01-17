@@ -39,21 +39,21 @@ public class Def_CreateAWSVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.SelectDataCenter(driver, "AWS");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectEnvironment(driver, "ATOS");
+		//PageObjects.CreateVirtualServerPage.SelectEnvironment(driver, "ATOS");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectRegion(driver, "AWS");
+		//PageObjects.CreateVirtualServerPage.SelectRegion(driver, "AWS");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys("virtualservertest-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectUserGroup(driver, "ATF2 CMP Root Admin");
+		//PageObjects.CreateVirtualServerPage.SelectUserGroup(driver, "ATF2 CMP Root Admin");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectManagedOS(driver, "Yes");
+		//PageObjects.CreateVirtualServerPage.SelectManagedOS(driver, "Yes");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectNeverExpire(driver, "Yes");
+		//PageObjects.CreateVirtualServerPage.SelectNeverExpire(driver, "Yes");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.txt_BusinessPurpose(driver).sendKeys("virtualservertest-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectApplication(driver, "RDSM178");
+		//PageObjects.CreateVirtualServerPage.SelectApplication(driver, "RDSM178");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		JavascriptExecutor js = (JavascriptExecutor) driver; 
 		js.executeScript("arguments[0].click();",PageObjects.CreateVirtualServerPage.btn_ProvisionTab(driver));		
@@ -64,39 +64,40 @@ public class Def_CreateAWSVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.SelectVirtualNetwork(driver, "Tower");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectSubnet(driver, "Private");
+		//PageObjects.CreateVirtualServerPage.SelectSubnet(driver, "Private");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectSecurityGroup(driver, "EPO");
+		//PageObjects.CreateVirtualServerPage.SelectSecurityGroup(driver, "EPO");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectSSHKeyName(driver, "cmp");
+		//PageObjects.CreateVirtualServerPage.SelectSSHKeyName(driver, "cmp");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		js.executeScript("arguments[0].click();",PageObjects.CreateVirtualServerPage.btn_AdditionalVMDetailsTab(driver));	
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectAdditionalTagging(driver, "Yes");
+		//PageObjects.CreateVirtualServerPage.SelectAdditionalTagging(driver, "Yes");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectMaintenanceOptions(driver, "Yes");
+		//PageObjects.CreateVirtualServerPage.SelectMaintenanceOptions(driver, "Yes");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.btn_AddTags(driver).click();
+		//PageObjects.CreateVirtualServerPage.btn_AddTags(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_Key(driver).sendKeys("key-"+Utils.CommonScripts.GetDateTime());
-		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		Thread.sleep(2000);	
-		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_Value(driver).sendKeys("value-"+Utils.CommonScripts.GetDateTime());
+		//PageObjects.CreateVirtualServerPage.txt_Key(driver).sendKeys("key-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectBackup(driver, "EMC");
+		//PageObjects.CreateVirtualServerPage.txt_Value(driver).sendKeys("value-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectBackupPolicy(driver, "SQL");
+		Thread.sleep(2000);	
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		//PageObjects.CreateVirtualServerPage.SelectBackup(driver, "EMC");
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		//PageObjects.CreateVirtualServerPage.SelectBackupPolicy(driver, "SQL");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.txt_cloudID(driver).sendKeys("Atos-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectBDisasterRecovery(driver, "Yes");
+		//PageObjects.CreateVirtualServerPage.SelectBDisasterRecovery(driver, "Yes");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectDRRegion(driver, "AWS");
-		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));		
-		PageObjects.CreateVirtualServerPage.btn_Submit(driver).click();
+		//PageObjects.CreateVirtualServerPage.SelectDRRegion(driver, "AWS");
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].click();",PageObjects.CreateVirtualServerPage.btn_Submit(driver));
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		
 	}
@@ -107,23 +108,30 @@ public class Def_CreateAWSVirtualServer {
 			WebDriverWait wait=new WebDriverWait(driver, 300);
 			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
-			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "View stack details"));
+			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_stackmessage(driver), "response"));
+			Thread.sleep(3000);
 			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
-			if (RequestStatusMessage.contains("Failed"))
+			
+			
+			if (RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
-				System.out.println(RequestStatusMessage);
+				
 			}
-			else if (RequestStatusMessage.contains("Success"))
+			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
 			{
-				System.out.println("Operation Success");
-				System.out.println(RequestStatusMessage);
+				System.out.println("Virtual Server Created ");
+				
+			}
+			else
+			{
+				System.out.println("Operation failed");
 			}
 			
-			System.out.println(RequestStatusMessage);
-		} catch (Exception e) {
 			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 		//e.printStackTrace();
 		}
 	}
@@ -135,7 +143,7 @@ public class Def_CreateAWSVirtualServer {
 
 	@Given("^Print test finished$")
 	public void print_test_finished() throws Throwable {
-		System.out.println("Test Completed");
+		//System.out.println("Test Completed");
 	}
 
 }
