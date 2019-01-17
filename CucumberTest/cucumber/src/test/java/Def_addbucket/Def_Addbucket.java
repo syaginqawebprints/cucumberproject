@@ -67,30 +67,35 @@ public class Def_Addbucket {
 	@Given("^Check the Status and print message$")
 	public void check_the_Status_and_print_message() throws Throwable {
 		
-	 
-			try {
-				WebDriverWait wait=new WebDriverWait(driver, 300);
-				Thread.sleep(3000);
-				wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
-				wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "View stack details"));
-				String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
-				String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
-				if (RequestStatusMessage.contains("Failed"))
-				{
-					System.out.println("Operation failed");
-					System.out.println(RequestStatusMessage);
-				}
-				else if (RequestStatusMessage.contains("Success"))
-				{
-					System.out.println("Operation Success");
-					System.out.println(RequestStatusMessage);
-				}
+		
+			WebDriverWait wait=new WebDriverWait(driver, 300);
+			Thread.sleep(3000);
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
+			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_stackmessage(driver), "Completed"));
+			Thread.sleep(3000);
+			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
+			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+			
+			
+			if (RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
+			{
+				System.out.println("Operation failed");
+				System.out.println(StackStatusMessage);
 				
-				System.out.println(RequestStatusMessage);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-			//e.printStackTrace();
 			}
+			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Completed"))
+			{
+				System.out.println("Add bucket finished ");
+				
+			}
+			else
+			{
+				System.out.println("Operation failed");
+				System.out.println(StackStatusMessage);
+			}
+			
+			
+	
 	    
 	}
 	
@@ -103,7 +108,7 @@ public class Def_Addbucket {
 	@Given("^Print test finished$")
 	public void print_test_finished() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Test Completed");
+		//System.out.println("Test Completed");
 	}
 
 
