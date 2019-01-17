@@ -77,6 +77,7 @@ public class Def_Createsnapshot {
 			if (RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
+				System.out.println(StackStatusMessage);
 				
 			}
 			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
@@ -87,6 +88,7 @@ public class Def_Createsnapshot {
 			else
 			{
 				System.out.println("Operation failed");
+				System.out.println(StackStatusMessage);
 			}
 			
 			
