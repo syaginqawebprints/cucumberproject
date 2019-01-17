@@ -84,6 +84,10 @@ public class Def_Createsnapshot {
 				System.out.println("Snapshot Created ");
 				
 			}
+			else
+			{
+				System.out.println("Operation failed");
+			}
 			
 			
 		} catch (Exception e) {
