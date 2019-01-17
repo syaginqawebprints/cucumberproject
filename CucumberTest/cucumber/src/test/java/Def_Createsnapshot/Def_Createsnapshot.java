@@ -30,24 +30,32 @@ public class Def_Createsnapshot {
 		try {
 			WebDriverWait wait=new WebDriverWait(driver, 300);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			   wait.until(ExpectedConditions.elementToBeClickable(PageObjects.SnapshotPage.cmb_CloudAccount(driver)));
-			   wait.until(ExpectedConditions.elementToBeClickable(PageObjects.SnapshotPage.txt_StackName(driver)));
-			   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			   JavascriptExecutor js = (JavascriptExecutor) driver; 
-			   js.executeScript("arguments[0].click();", PageObjects.SnapshotPage.cmb_CloudAccount(driver));
-			   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			   PageObjects.SnapshotPage.txt_StackName(driver).sendKeys("snapshottest-"+Utils.CommonScripts.GetDateTime());
-			   js.executeScript("arguments[0].click();", PageObjects.SnapshotPage.cmb_Location(driver));
-			   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			   js.executeScript("arguments[0].click();", PageObjects.SnapshotPage.cmb_UserGroup(driver));
-			   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			   js.executeScript("arguments[0].click();", PageObjects.SnapshotPage.btn_provision(driver));
-			   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			   js.executeScript("arguments[0].click();", PageObjects.SnapshotPage.cmb_volumeid(driver));
-			   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			   PageObjects.SnapshotPage.txt_description(driver).sendKeys("snapshot-description");
-			   js.executeScript("arguments[0].click();", PageObjects.SnapshotPage.btn_submit(driver));
-			   wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			//PageObjects.SnapshotPage.SelectLogicalDataCenter(driver, "AWS");
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			//PageObjects.SnapshotPage.SelectCloudAccount(driver, "ATOS");
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			//PageObjects.SnapshotPage.SelectLocation(driver, "AWS");
+			Thread.sleep(3000);
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			JavascriptExecutor js = (JavascriptExecutor) driver; 
+			PageObjects.SnapshotPage.txt_StackName(driver).sendKeys("snapshottest-"+Utils.CommonScripts.GetDateTime());
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			//PageObjects.SnapshotPage.SelectUserGroup(driver, "ATF2");
+			Thread.sleep(3000);
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			js.executeScript("arguments[0].click();", PageObjects.SnapshotPage.btn_provision(driver));
+			Thread.sleep(3000);
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			Thread.sleep(3000);
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			PageObjects.SnapshotPage.SelectVolumeId(driver, "vol-0022596284b1d54f5");
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			//PageObjects.SnapshotPage.txt_description(driver).sendKeys("snapshot-description");
+			Thread.sleep(3000);
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			js.executeScript("arguments[0].click();", PageObjects.SnapshotPage.btn_submit(driver));
+			
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
@@ -60,21 +68,24 @@ public class Def_Createsnapshot {
 			WebDriverWait wait=new WebDriverWait(driver, 300);
 			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
-			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "View stack details"));
+			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_stackmessage(driver), "response"));
+			Thread.sleep(3000);
 			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
-			if (RequestStatusMessage.contains("Failed"))
+			
+			
+			if (RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
-				System.out.println(RequestStatusMessage);
+				
 			}
-			else if (RequestStatusMessage.contains("Success"))
+			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
 			{
-				System.out.println("Operation Success");
-				System.out.println(RequestStatusMessage);
+				System.out.println("Snapshot Created ");
+				
 			}
 			
-			System.out.println(RequestStatusMessage);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		//e.printStackTrace();

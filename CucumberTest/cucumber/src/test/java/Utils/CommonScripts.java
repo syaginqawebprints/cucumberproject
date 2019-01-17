@@ -67,7 +67,7 @@ public class CommonScripts {
 		}
 		long startTime = System.currentTimeMillis();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl);
 		return driver;
 

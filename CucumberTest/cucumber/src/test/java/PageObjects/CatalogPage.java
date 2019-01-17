@@ -32,7 +32,7 @@ public class CatalogPage {
 
 	//Create Snapshot Link
 	public static WebElement link_snapshot(WebDriver driver) {
-		element =driver.findElement(By.xpath("//*[contains(text(), 'Create Snapshot')]"));
+		element =driver.findElement(By.partialLinkText("Create Snapshot"));
 		return element;
 	}	
 	

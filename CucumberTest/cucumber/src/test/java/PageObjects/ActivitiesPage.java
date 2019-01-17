@@ -29,7 +29,7 @@ public class ActivitiesPage {
 	
 	//Stack Status Message
 	public static WebElement lbl_stackmessage(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"myTabContent\"]/div/div/div/div[2]/div/div/div[2]"));
+		element = driver.findElement(By.xpath("//*[@id=\"myTabContent\"]/div/div/div/div[2]"));
 		return element;
 	}
 	
