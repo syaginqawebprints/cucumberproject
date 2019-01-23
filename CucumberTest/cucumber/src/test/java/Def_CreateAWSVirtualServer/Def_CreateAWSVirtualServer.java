@@ -108,7 +108,8 @@ public class Def_CreateAWSVirtualServer {
 			WebDriverWait wait=new WebDriverWait(driver, 300);
 			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
-			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_stackmessage(driver), "response"));
+			//wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_stackmessage(driver), "response"));
+			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "details"));
 			Thread.sleep(3000);
 			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
@@ -140,7 +141,7 @@ public class Def_CreateAWSVirtualServer {
 
 	@Given("^close the browser$")
 	public void close_the_browser() throws Throwable {
-		 driver.quit();
+		driver.quit();
 	}
 
 	@Given("^Print test finished$")
