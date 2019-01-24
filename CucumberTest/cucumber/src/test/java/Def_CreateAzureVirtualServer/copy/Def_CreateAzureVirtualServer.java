@@ -124,7 +124,7 @@ public class Def_CreateAzureVirtualServer {
 			}
 			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
 			{
-				System.out.println("Virtual Server Created ");
+				System.out.println("Azure Virtual Server Created ");
 				
 			}
 			else

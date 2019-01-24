@@ -352,7 +352,7 @@ public class CreateVirtualServerPage {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(3000);	
-		PageObjects.CreateVirtualServerPage.cmb_SSHKeyName(driver).click();
+		PageObjects.CreateVirtualServerPage.cmb_ResourceGroup(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-10\"]"));
