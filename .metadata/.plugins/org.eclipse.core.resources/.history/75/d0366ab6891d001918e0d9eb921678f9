@@ -1,0 +1,12 @@
+test.environment=Development
+test.url=https://atoscmptest.service-now.com/cloud_portal
+dev.url=https://atoscmpdev.service-now.com/cloud_portal
+live.url=https://atoscmpdev.service-now.com/cloud_portal
+browser=Google Chrome
+user.name=cmp.atos.admin     
+password=cmp.atos.admin
+waiting.time=5
+sleep.time=500
+chrome.driver.path=WebDrivers/chromedriver.exe
+ie.driver.path=WebDrivers/IEDriverServer.exe
+mozilla.driver.path=WebDrivers/geckodriver.exe
