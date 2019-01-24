@@ -223,6 +223,15 @@ public class CreateVirtualServerPage {
 		return element;
 	}
 	
+	//Node Name text box
+	public static WebElement txt_NodeName(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"sp_formfield_Virtual_Server_NodeName\"]"));
+		return element;
+	}
+	
+	
+	
+	
 	//Compute Profile Drop Down
 	public static WebElement cmb_ComputeProfile(WebDriver driver) {
 		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-8\"]"));
@@ -422,6 +431,39 @@ public class CreateVirtualServerPage {
 	       Thread.sleep(1000);	
 	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 	}
+	
+	
+	
+	//Availability Group Drop Down
+	public static WebElement cmb_AvailabilityGroup(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-17\"]"));
+		return element;
+	}
+	
+	//Select SSH Key Name
+	public static void  SelectAvailabilityGroup(WebDriver driver, String ServerTxt) throws InterruptedException {
+		WebDriverWait wait=new WebDriverWait(driver, 300);
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		Thread.sleep(3000);	
+		PageObjects.CreateVirtualServerPage.cmb_AvailabilityGroup(driver).click();
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		Thread.sleep(2000);	
+		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-17\"]"));
+		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
+	       for (WebElement opt : list) {	
+	          if (opt.getAttribute("innerHTML").contains(ServerTxt)) {	 
+	        	  opt.click();
+	             break;	 
+	          }	 
+	       }
+	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+	       Thread.sleep(1000);	
+	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+	}
+	
+	
+	
+	
 	
 	
 	//Additional VM Details Tab button

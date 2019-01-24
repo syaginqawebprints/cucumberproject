@@ -1,4 +1,4 @@
-package Def_CreateAzureVirtualServer.copy;
+package Def_CreateAzureVirtualServer;
 
 import java.util.List;
 
