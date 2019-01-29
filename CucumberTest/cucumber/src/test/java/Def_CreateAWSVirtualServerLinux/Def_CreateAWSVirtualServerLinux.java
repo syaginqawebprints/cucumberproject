@@ -1,6 +1,7 @@
 package Def_CreateAWSVirtualServerLinux;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -24,6 +25,7 @@ public class Def_CreateAWSVirtualServerLinux {
 		Thread.sleep(2000);
 	    PageObjects.ManageStacksPage.menu_catalog(driver).click();
 	    Thread.sleep(2000);
+	    driver.manage().timeouts().implicitlyWait(15, TimeUnit.MINUTES);
 	}
 
 	@Given("^Open virtual server$")
