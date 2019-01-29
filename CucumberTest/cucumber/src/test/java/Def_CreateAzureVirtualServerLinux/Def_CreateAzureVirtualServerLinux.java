@@ -1,4 +1,4 @@
-package Def_CreateAzureVirtualServer;
+package Def_CreateAzureVirtualServerLinux;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 
-public class Def_CreateAzureVirtualServer {
+public class Def_CreateAzureVirtualServerLinux {
 	
 	WebDriver driver;
 	
@@ -43,7 +43,7 @@ public class Def_CreateAzureVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectRegion(driver, "AWS");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys("azurevirtualservertest-"+Utils.CommonScripts.GetDateTime());
+		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys("azurelinux-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectUserGroup(driver, "ATF2 CMP Root Admin");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
@@ -51,7 +51,7 @@ public class Def_CreateAzureVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectNeverExpire(driver, "Yes");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_BusinessPurpose(driver).sendKeys("azurevirtualservertest-"+Utils.CommonScripts.GetDateTime());
+		PageObjects.CreateVirtualServerPage.txt_BusinessPurpose(driver).sendKeys("azurelinux-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectApplication(driver, "RDSM178");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
@@ -124,7 +124,7 @@ public class Def_CreateAzureVirtualServer {
 			}
 			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
 			{
-				System.out.println("Azure Virtual Server Created ");
+				System.out.println("Azure Linux Virtual Server Created ");
 				
 			}
 			else

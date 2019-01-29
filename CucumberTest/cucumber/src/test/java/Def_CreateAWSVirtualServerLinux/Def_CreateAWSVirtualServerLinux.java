@@ -1,4 +1,4 @@
-package Def_CreateAWSVirtualServer;
+package Def_CreateAWSVirtualServerLinux;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 
-public class Def_CreateAWSVirtualServer {
+public class Def_CreateAWSVirtualServerLinux {
 	
 	WebDriver driver;
 	
@@ -43,7 +43,7 @@ public class Def_CreateAWSVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectRegion(driver, "AWS");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys("virtualservertest-"+Utils.CommonScripts.GetDateTime());
+		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys("awslinux-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectUserGroup(driver, "ATF2 CMP Root Admin");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
@@ -51,7 +51,7 @@ public class Def_CreateAWSVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectNeverExpire(driver, "Yes");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_BusinessPurpose(driver).sendKeys("virtualservertest-"+Utils.CommonScripts.GetDateTime());
+		PageObjects.CreateVirtualServerPage.txt_BusinessPurpose(driver).sendKeys("awslinux-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectApplication(driver, "RDSM178");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
@@ -123,7 +123,7 @@ public class Def_CreateAWSVirtualServer {
 			}
 			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
 			{
-				System.out.println("Virtual Server Created ");
+				System.out.println("AWS Linux Virtual Server Created ");
 				
 			}
 			else

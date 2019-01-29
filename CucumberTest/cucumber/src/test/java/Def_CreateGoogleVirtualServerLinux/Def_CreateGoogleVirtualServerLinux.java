@@ -1,4 +1,4 @@
-package Def_CreateGoogleVirtualServer;
+package Def_CreateGoogleVirtualServerLinux;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 
-public class Def_CreateGoogleVirtualServer {
+public class Def_CreateGoogleVirtualServerLinux {
 	
 	WebDriver driver;
 	
@@ -43,7 +43,7 @@ public class Def_CreateGoogleVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectRegion(driver, "AWS");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys("googlevirtualservertest-"+Utils.CommonScripts.GetDateTime());
+		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys("googlelinux-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectUserGroup(driver, "ATF2 CMP Root Admin");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
@@ -51,7 +51,7 @@ public class Def_CreateGoogleVirtualServer {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectNeverExpire(driver, "Yes");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_BusinessPurpose(driver).sendKeys("googlevirtualservertest-"+Utils.CommonScripts.GetDateTime());
+		PageObjects.CreateVirtualServerPage.txt_BusinessPurpose(driver).sendKeys("googlelinux-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectApplication(driver, "RDSM178");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
@@ -129,7 +129,7 @@ public class Def_CreateGoogleVirtualServer {
 			}
 			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Completed"))
 			{
-				System.out.println("Google Virtual Server Created ");
+				System.out.println("Google Linux Virtual Server Created ");
 				
 			}
 			else

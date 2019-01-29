@@ -7,10 +7,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/CreateAWSVirtualServer", 
-	glue= {"Def_CreateAWSVirtualServer"}
+		features = "src/test/resources/CreateGoogleVirtualServer", 
+	glue= {"Def_CreateGoogleVirtualServerLinux"}
 		
 		)
-public class CT_CreateAWSVirtualServer {
+public class CT_CreateGoogleVirtualServerLinux {
 
 }
