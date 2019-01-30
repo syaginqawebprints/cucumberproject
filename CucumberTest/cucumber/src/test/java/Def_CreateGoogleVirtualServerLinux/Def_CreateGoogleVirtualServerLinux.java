@@ -58,7 +58,7 @@ public class Def_CreateGoogleVirtualServerLinux {
 		JavascriptExecutor js = (JavascriptExecutor) driver; 
 		js.executeScript("arguments[0].click();",PageObjects.CreateVirtualServerPage.btn_ProvisionTab(driver));		
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));		
-		PageObjects.CreateVirtualServerPage.txt_NodeName(driver).sendKeys("googlevirtualservertest-"+Utils.CommonScripts.GetDateTime());
+		PageObjects.CreateVirtualServerPage.txt_NodeName(driver).sendKeys("googlelinux-"+Utils.CommonScripts.GetDateTime());
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.SelectComputeProfile(driver, "Small");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));

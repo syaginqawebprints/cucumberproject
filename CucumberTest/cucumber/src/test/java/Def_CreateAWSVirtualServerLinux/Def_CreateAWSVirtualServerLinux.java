@@ -25,7 +25,7 @@ public class Def_CreateAWSVirtualServerLinux {
 		Thread.sleep(2000);
 	    PageObjects.ManageStacksPage.menu_catalog(driver).click();
 	    Thread.sleep(2000);
-	    driver.manage().timeouts().implicitlyWait(15, TimeUnit.MINUTES);
+	    
 	}
 
 	@Given("^Open virtual server$")

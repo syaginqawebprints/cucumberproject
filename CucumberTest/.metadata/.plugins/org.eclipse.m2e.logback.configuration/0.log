@@ -2040,3 +2040,79 @@ java.lang.NullPointerException: null
 2019-01-29 14:52:37,643 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
 2019-01-29 14:52:37,646 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-01-29 14:52:37,650 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-29 15:24:30,740 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 15:24:30,747 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-29 15:24:30,748 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 15:24:30,753 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-29 15:33:06,146 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 15:33:06,146 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-29 15:33:06,153 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 15:33:06,156 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-29 15:33:43,180 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 15:33:43,181 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-29 15:33:43,182 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 15:33:43,182 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-01-29 15:46:11,311 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 15:46:11,312 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-29 15:46:11,318 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 15:46:11,326 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-29 15:46:26,280 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 15:46:26,281 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-29 15:46:26,282 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 15:46:26,284 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-29 23:49:20,565 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 23:49:20,643 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-29 23:49:20,645 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 23:49:20,727 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-29 23:50:13,936 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 23:50:13,936 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-29 23:50:13,938 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 23:50:13,941 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-29 23:55:38,087 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 23:55:38,106 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-29 23:55:38,107 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 23:55:38,112 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-29 23:57:06,840 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 23:57:06,840 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-29 23:57:06,842 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 23:57:06,845 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-29 23:57:42,148 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 23:57:42,148 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-29 23:57:42,149 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-29 23:57:42,152 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-30 00:03:15,365 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:03:15,365 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-30 00:03:15,366 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:03:15,370 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-30 00:03:52,131 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:03:52,131 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-30 00:03:52,132 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:03:52,137 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-30 00:04:05,086 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:04:05,086 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-30 00:04:05,089 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:04:05,093 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-30 00:04:43,102 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:04:43,105 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-30 00:04:43,106 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:04:43,110 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-30 00:08:21,087 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:08:21,087 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-30 00:08:21,088 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:08:21,091 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-30 00:10:52,343 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:10:52,343 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-30 00:10:52,364 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:10:52,367 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-30 00:32:53,625 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:32:53,625 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-30 00:32:53,626 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:32:53,629 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-30 00:33:45,996 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:33:45,996 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-30 00:33:45,997 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:33:46,001 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-01-30 00:40:56,578 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:40:56,578 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-01-30 00:40:56,581 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-01-30 00:40:56,587 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
