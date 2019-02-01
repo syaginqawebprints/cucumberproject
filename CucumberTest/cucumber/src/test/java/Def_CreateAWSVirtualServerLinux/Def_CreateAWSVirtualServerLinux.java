@@ -64,7 +64,7 @@ public class Def_CreateAWSVirtualServerLinux {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.SelectImage(driver, "Linux");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectVirtualNetwork(driver, "Tower");
+		PageObjects.CreateVirtualServerPage.SelectVirtualNetwork(driver, "VPC-EUW1");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectSubnet(driver, "Private");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
