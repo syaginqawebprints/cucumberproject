@@ -35,13 +35,23 @@ public class Def_UnprovisioningVS {
 
 	@Given("^Delete Virtual Server$")
 	public void delete_Virtual_Server() throws Throwable {
-		PageObjects.StacksPage.div_searchrsults(driver).findElement(By.partialLinkText("awslinux")).click();
+		PageObjects.StacksPage.div_searchrsults(driver).findElements(By.partialLinkText("awslinux")).get(1).click();
+		Thread.sleep(3000);
 		WebDriverWait wait=new WebDriverWait(driver, 300);
-		wait.until(ExpectedConditions.elementToBeClickable(PageObjects.StacksPage.cmb_DeprovisionAction(driver)));
-		Thread.sleep(2000);
-		PageObjects.StacksPage.cmb_DeprovisionAction(driver).click();
-		driver.findElement(By.xpath("//*[@id=\"x4a6a1c9a373fd748b8280ba754990e27\"]/div/div[2]/div/select/option[2]")).click();
-		Thread.sleep(2000);
+		if(!PageObjects.StacksPage.cmb_DeprovisionAction(driver).isDisplayed()){
+			driver.navigate().back();
+			PageObjects.StacksPage.div_searchrsults(driver).findElements(By.partialLinkText("awslinux")).get(1).click();
+			Thread.sleep(3000);
+			PageObjects.StacksPage.cmb_DeprovisionAction(driver).click();
+			driver.findElement(By.xpath("//*[@id=\"x4a6a1c9a373fd748b8280ba754990e27\"]/div/div[2]/div/select/option[2]")).click();
+			
+			}else{
+				Thread.sleep(3000);
+				PageObjects.StacksPage.cmb_DeprovisionAction(driver).click();
+				driver.findElement(By.xpath("//*[@id=\"x4a6a1c9a373fd748b8280ba754990e27\"]/div/div[2]/div/select/option[2]")).click();
+				Thread.sleep(2000);
+			}
+		
 		wait.until(ExpectedConditions.elementToBeClickable(PageObjects.StacksPage.btn_DeprovisionOK(driver)));
 		Thread.sleep(2000);
 		PageObjects.StacksPage.btn_DeprovisionOK(driver).click();
