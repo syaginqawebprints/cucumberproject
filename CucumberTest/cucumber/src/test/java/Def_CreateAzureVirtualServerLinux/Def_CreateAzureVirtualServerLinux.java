@@ -1,5 +1,6 @@
 package Def_CreateAzureVirtualServerLinux;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -16,6 +17,7 @@ import cucumber.api.java.en.Given;
 public class Def_CreateAzureVirtualServerLinux {
 	
 	WebDriver driver;
+	String ServerName;
 	
 	@Given("^Login and click on catalog menu$")
 	public void login_and_click_on_catalog_menu() throws Throwable {
@@ -43,7 +45,8 @@ public class Def_CreateAzureVirtualServerLinux {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectRegion(driver, "AWS");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys("azurelinux-"+Utils.CommonScripts.GetDateTime());
+		ServerName="azurelinux-"+Utils.CommonScripts.GetDateTime();
+		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys(ServerName);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectUserGroup(driver, "ATF2 CMP Root Admin");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
@@ -105,25 +108,25 @@ public class Def_CreateAzureVirtualServerLinux {
 
 	@Given("^Check Status and print message$")
 	public void check_Status_and_print_message() throws Throwable {
+		
 		try {
 			WebDriverWait wait=new WebDriverWait(driver, 300);
 			Thread.sleep(3000);
-			wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
-			//wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_stackmessage(driver), "response"));
-			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "details"));
-			Thread.sleep(3000);
-			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
+			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "Deploying Stack"));
+			GetStackStatusMessage();
+			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessages(driver).getText();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
-			
-			
-			if (RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
+			if(RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
 				System.out.println(StackStatusMessage);
-				
 			}
-			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
+			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Completed"))
 			{
+				ArrayList<String> ServerList =  new ArrayList<String>();
+				ServerList=Utils.CommonScripts.GetServerList();
+				ServerList.add(ServerName);
+				Utils.CommonScripts.WriteServerList(ServerList);
 				System.out.println("Azure Linux Virtual Server Created ");
 				
 			}
@@ -132,11 +135,9 @@ public class Def_CreateAzureVirtualServerLinux {
 				System.out.println("Operation failed");
 				System.out.println(StackStatusMessage);
 			}
-			
-			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-		//e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 
@@ -148,6 +149,25 @@ public class Def_CreateAzureVirtualServerLinux {
 	@Given("^Print test finished$")
 	public void print_test_finished() throws Throwable {
 		//System.out.println("Test Completed");
+	}
+public String GetStackStatusMessage() throws InterruptedException {
+		
+		Thread.sleep(5000);
+		String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessages(driver).getText();
+		String StackStatusMessage="";
+		if (RequestStatusMessage.contains("Deploying Stack") && !RequestStatusMessage.contains("View"))
+		{
+			Thread.sleep(5000);
+			GetStackStatusMessage();
+		}
+		else
+		{
+			Thread.sleep(5000);
+			StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+		}
+		 
+		return StackStatusMessage;
+		
 	}
 
 }

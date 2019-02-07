@@ -107,22 +107,20 @@ public class Def_CreateAWSVirtualServerWindows {
 
 	@Given("^Check Status and print message$")
 	public void check_Status_and_print_message() throws Throwable {
-
+		
 		try {
 			WebDriverWait wait=new WebDriverWait(driver, 300);
 			Thread.sleep(3000);
-			wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
-			Thread.sleep(3000);
-			String RequestStatusMessage=GetRequestStatusMessage();
+			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "Deploying Stack"));
+			GetStackStatusMessage();
+			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessages(driver).getText();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
-						
-			if (RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
+			if(RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
 				System.out.println(StackStatusMessage);
-				
 			}
-			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
+			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Completed"))
 			{
 				ArrayList<String> ServerList =  new ArrayList<String>();
 				ServerList=Utils.CommonScripts.GetServerList();
@@ -136,12 +134,13 @@ public class Def_CreateAWSVirtualServerWindows {
 				System.out.println("Operation failed");
 				System.out.println(StackStatusMessage);
 			}
-			
-			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-		//e.printStackTrace();
+			//e.printStackTrace();
 		}
+		
+		
+		
 	}
 
 	@Given("^close the browser$")
@@ -153,33 +152,24 @@ public class Def_CreateAWSVirtualServerWindows {
 	public void print_test_finished() throws Throwable {
 		//System.out.println("Test Completed");
 	}
-	public String GetRequestStatusMessage() {
-		WebDriverWait wait=new WebDriverWait(driver, 300);
-		try {
-			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "Success"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			GetRequestStatusMessage();
-		}
-		String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();	
-		String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
-		if (!RequestStatusMessage.contains("Success") ||  !RequestStatusMessage.contains("Failed") ||  !RequestStatusMessage.contains("exceeded") ||  !RequestStatusMessage.contains("Error"))
-		{
-			GetRequestStatusMessage();
-			}
-		else if (RequestStatusMessage.contains("Processing"))
-		{
 
-			GetRequestStatusMessage();
-		}
-			else
-			{
-				GetRequestStatusMessage();
-				
-			}
-			
-			return RequestStatusMessage;
+	public String GetStackStatusMessage() throws InterruptedException {
 		
+		Thread.sleep(5000);
+		String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessages(driver).getText();
+		String StackStatusMessage="";
+		if (RequestStatusMessage.contains("Deploying Stack") && !RequestStatusMessage.contains("View"))
+		{
+			Thread.sleep(5000);
+			GetStackStatusMessage();
+		}
+		else
+		{
+			Thread.sleep(5000);
+			StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+		}
+		 
+		return StackStatusMessage;
 		
 	}
 }
