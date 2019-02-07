@@ -1,5 +1,6 @@
 package Def_CreateAWSVirtualServerWindows;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -16,6 +17,7 @@ import cucumber.api.java.en.Given;
 public class Def_CreateAWSVirtualServerWindows {
 	
 	WebDriver driver;
+	String ServerName;
 	
 	@Given("^Login and click on catalog menu$")
 	public void login_and_click_on_catalog_menu() throws Throwable {
@@ -43,7 +45,8 @@ public class Def_CreateAWSVirtualServerWindows {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectRegion(driver, "AWS");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys("awswindows-"+Utils.CommonScripts.GetDateTime());
+		ServerName="awswindows-"+Utils.CommonScripts.GetDateTime();
+		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys(ServerName);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectUserGroup(driver, "ATF2 CMP Root Admin");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
@@ -104,17 +107,15 @@ public class Def_CreateAWSVirtualServerWindows {
 
 	@Given("^Check Status and print message$")
 	public void check_Status_and_print_message() throws Throwable {
+
 		try {
 			WebDriverWait wait=new WebDriverWait(driver, 300);
 			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
-			//wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_stackmessage(driver), "response"));
-			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "details"));
 			Thread.sleep(3000);
-			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
+			String RequestStatusMessage=GetRequestStatusMessage();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
-			
-			
+						
 			if (RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
@@ -123,6 +124,10 @@ public class Def_CreateAWSVirtualServerWindows {
 			}
 			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
 			{
+				ArrayList<String> ServerList =  new ArrayList<String>();
+				ServerList=Utils.CommonScripts.GetServerList();
+				ServerList.add(ServerName);
+				Utils.CommonScripts.WriteServerList(ServerList);
 				System.out.println("AWS Windows Virtual Server Created ");
 				
 			}
@@ -148,5 +153,33 @@ public class Def_CreateAWSVirtualServerWindows {
 	public void print_test_finished() throws Throwable {
 		//System.out.println("Test Completed");
 	}
+	public String GetRequestStatusMessage() {
+		WebDriverWait wait=new WebDriverWait(driver, 300);
+		try {
+			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "Success"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			GetRequestStatusMessage();
+		}
+		String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();	
+		String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+		if (!RequestStatusMessage.contains("Success") ||  !RequestStatusMessage.contains("Failed") ||  !RequestStatusMessage.contains("exceeded") ||  !RequestStatusMessage.contains("Error"))
+		{
+			GetRequestStatusMessage();
+			}
+		else if (RequestStatusMessage.contains("Processing"))
+		{
 
+			GetRequestStatusMessage();
+		}
+			else
+			{
+				GetRequestStatusMessage();
+				
+			}
+			
+			return RequestStatusMessage;
+		
+		
+	}
 }
