@@ -1,5 +1,6 @@
 package Def_CreateAWSVirtualServerLinux;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +18,7 @@ import cucumber.api.java.en.Given;
 public class Def_CreateAWSVirtualServerLinux {
 	
 	WebDriver driver;
-	
+	String ServerName;
 	@Given("^Login and click on catalog menu$")
 	public void login_and_click_on_catalog_menu() throws Throwable {
 		driver=Utils.CommonScripts.DoLogin();
@@ -45,7 +46,8 @@ public class Def_CreateAWSVirtualServerLinux {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectRegion(driver, "AWS");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys("awslinux-"+Utils.CommonScripts.GetDateTime());
+		ServerName="awslinux-"+Utils.CommonScripts.GetDateTime();
+		PageObjects.CreateVirtualServerPage.txt_StackName(driver).sendKeys(ServerName);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectUserGroup(driver, "ATF2 CMP Root Admin");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
@@ -110,13 +112,10 @@ public class Def_CreateAWSVirtualServerLinux {
 			WebDriverWait wait=new WebDriverWait(driver, 300);
 			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
-			//wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_stackmessage(driver), "response"));
-			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "details"));
 			Thread.sleep(3000);
-			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
+			String RequestStatusMessage=GetRequestStatusMessage();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
-			
-			
+						
 			if (RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
@@ -125,6 +124,10 @@ public class Def_CreateAWSVirtualServerLinux {
 			}
 			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
 			{
+				ArrayList<String> ServerList =  new ArrayList<String>();
+				ServerList=Utils.CommonScripts.GetServerList();
+				ServerList.add(ServerName);
+				Utils.CommonScripts.WriteServerList(ServerList);
 				System.out.println("AWS Linux Virtual Server Created ");
 				
 			}
@@ -151,4 +154,32 @@ public class Def_CreateAWSVirtualServerLinux {
 		//System.out.println("Test Completed");
 	}
 
+	public String GetRequestStatusMessage() {
+		WebDriverWait wait=new WebDriverWait(driver, 300);
+		try {
+			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "details"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}
+		String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();	
+		String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+		if (RequestStatusMessage.contains("Success") ||  RequestStatusMessage.contains("Failed") ||  RequestStatusMessage.contains("exceeded") ||  RequestStatusMessage.contains("Error"))
+		{
+			return RequestStatusMessage;
+		}
+		else
+		{
+			try {
+				wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "details"));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				//e.printStackTrace();
+			}
+			 GetRequestStatusMessage();
+		}
+		
+		return RequestStatusMessage;
+		
+	}
 }

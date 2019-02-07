@@ -1,11 +1,25 @@
 package Utils;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -15,6 +29,17 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import jxl.Cell;
+import jxl.CellType;
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
+import jxl.write.biff.RowsExceededException;
 
 public class CommonScripts {
 	
@@ -148,6 +173,68 @@ public class CommonScripts {
 		   text=dtf.format(now);  
 		return text;
 	}
+	
+
+	public static ArrayList<String> GetServerList() {
+		String filePath = readProperty("virtual.server.dbpath");
+		File inputWorkbook = new File(filePath);
+		 Workbook w = null;
+		 ArrayList<String> ServerList =  new ArrayList<String>();
+	        try {
+	            try {
+					w = Workbook.getWorkbook(inputWorkbook);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	            
+	            Sheet sheet = w.getSheet(0);	           
+	                for (int i = 0; i < sheet.getRows(); i++) {
+	                    Cell cell = sheet.getCell(0, i);
+	                    CellType type = cell.getType();
+	                    if (type == CellType.LABEL) {
+	                    	
+	                    	ServerList.add(cell.getContents().toString());
+	                       
+	                    }
+	                }
+	            
+	        } catch (BiffException e) {
+	            e.printStackTrace();
+	        }
+	        return ServerList;
+	      
+	}
+	
+	public static void WriteServerList(ArrayList ServerList) {
+		try {
+			String filePath = readProperty("virtual.server.dbpath");
+			WritableWorkbook wb = Workbook.createWorkbook(new File(filePath));
+			WritableSheet ws = wb.createSheet("ServerList",1);
+			{
+		        for (int i=0;i<=ServerList.size()-1;i++)
+		        {
+		        	Label label = new Label(0,i,ServerList.get(i).toString());
+					ws.addCell(label); 
+		        }	
+			
+			
+			}
+			wb.write();
+			wb.close();
+		} catch (RowsExceededException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (WriteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
 	
 
 }
