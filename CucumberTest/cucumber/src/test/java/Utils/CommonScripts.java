@@ -192,9 +192,10 @@ public class CommonScripts {
 	                for (int i = 0; i < sheet.getRows(); i++) {
 	                    Cell cell = sheet.getCell(0, i);
 	                    CellType type = cell.getType();
+	                    Cell cell1 = sheet.getCell(1, i);
 	                    if (type == CellType.LABEL) {
 	                    	
-	                    	ServerList.add(cell.getContents().toString());
+	                    	ServerList.add(cell.getContents().toString()+";"+cell1.getContents().toString());
 	                       
 	                    }
 	                }
@@ -214,6 +215,7 @@ public class CommonScripts {
 			{
 		        for (int i=0;i<=ServerList.size()-1;i++)
 		        {
+		        	
 		        	Label label = new Label(0,i,ServerList.get(i).toString());
 					ws.addCell(label); 
 		        }	
