@@ -65,7 +65,7 @@ public class Def_CreateAWSVirtualServerWindows {
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.CreateVirtualServerPage.SelectImage(driver, "Win");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		PageObjects.CreateVirtualServerPage.SelectVirtualNetwork(driver, "Tower");
+		PageObjects.CreateVirtualServerPage.SelectVirtualNetwork(driver, "VPC-EUW1");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		//PageObjects.CreateVirtualServerPage.SelectSubnet(driver, "Private");
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
