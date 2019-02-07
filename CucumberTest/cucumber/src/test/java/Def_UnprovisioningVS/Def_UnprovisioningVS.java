@@ -14,7 +14,7 @@ import jxl.write.Label;
 
 public class Def_UnprovisioningVS {
 	WebDriver driver;
-	
+	int DeleteStatus=0;
 	@Given("^Open and Login to Application$")
 	public void open_and_Login_to_Application() throws Throwable {
 		driver=Utils.CommonScripts.DoLogin();
@@ -37,12 +37,23 @@ public class Def_UnprovisioningVS {
 
 	@Given("^Delete Virtual Server$")
 	public void delete_Virtual_Server() throws Throwable {
+		Thread.sleep(3000);
 		ArrayList<String> ServerList =  new ArrayList<String>();
 		ServerList=Utils.CommonScripts.GetServerList();
-		
+		Thread.sleep(3000);
         for (int i=0;i<=ServerList.size()-1;i++)
         {
+        	
+        	Thread.sleep(3000);
         	String DelServer=ServerList.get(i);
+        	
+        	if (DelServer.equals(""))
+        	{
+        		System.out.print("No Virtual Server Found for Deletion");
+        		int DeleteStatus=0;
+        	}
+        	else
+        	{
         	PageObjects.StacksPage.txt_search(driver).sendKeys(DelServer);
     		PageObjects.StacksPage.btn_search(driver).click();
     		PageObjects.StacksPage.div_searchrsults(driver).findElements(By.partialLinkText(DelServer)).get(1).click();
@@ -67,6 +78,9 @@ public class Def_UnprovisioningVS {
     		PageObjects.StacksPage.btn_DeprovisionOK(driver).click();
     		
     		ServerList.remove(i);
+    		int DeleteStatus=1;
+
+        	}
         }	
 		
 		
@@ -81,7 +95,14 @@ public class Def_UnprovisioningVS {
 
 	@Given("^Print test finished$")
 	public void print_test_finished() throws Throwable {
+		if (DeleteStatus==1)
+		{
 	    System.out.println("Virtual Server Deprovision Finished");
+		}
+		else
+		{
+		    System.out.println("Some of the Servers ware not deleted");
+			}
 	}
 
 
