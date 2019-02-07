@@ -122,7 +122,7 @@ public class Def_CreateAWSVirtualServerLinux {
 				System.out.println(StackStatusMessage);
 				
 			}
-			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
+			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Completed"))
 			{
 				ArrayList<String> ServerList =  new ArrayList<String>();
 				ServerList=Utils.CommonScripts.GetServerList();
@@ -146,7 +146,7 @@ public class Def_CreateAWSVirtualServerLinux {
 
 	@Given("^close the browser$")
 	public void close_the_browser() throws Throwable {
-		driver.quit();
+		//driver.quit();
 	}
 
 	@Given("^Print test finished$")
