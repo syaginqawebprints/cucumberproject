@@ -41,6 +41,14 @@ public class Def_UnprovisioningVS {
 		ArrayList<String> ServerList =  new ArrayList<String>();
 		ServerList=Utils.CommonScripts.GetServerList();
 		Thread.sleep(3000);
+		if (ServerList.size()<=0)
+		{
+			
+			//System.out.print("No Virtual Server Found for Deletion");
+    		DeleteStatus=2;
+		}
+		else
+		{
         for (int i=0;i<=ServerList.size()-1;i++)
         {
         	
@@ -49,8 +57,8 @@ public class Def_UnprovisioningVS {
         	
         	if (DelServer.equals(""))
         	{
-        		System.out.print("No Virtual Server Found for Deletion");
-        		int DeleteStatus=0;
+        		//System.out.print("No Virtual Server Found for Deletion");
+        		DeleteStatus=0;
         	}
         	else
         	{
@@ -78,14 +86,16 @@ public class Def_UnprovisioningVS {
     		PageObjects.StacksPage.btn_DeprovisionOK(driver).click();
     		
     		ServerList.remove(i);
-    		int DeleteStatus=1;
+    		DeleteStatus=1;
 
         	}
-        }	
+        	Utils.CommonScripts.WriteServerList(ServerList);
+    		//System.out.println("Virtual Server Removed ");
+        	}	
+		}
 		
 		
-		Utils.CommonScripts.WriteServerList(ServerList);
-		System.out.println("Virtual Server Removed ");
+		
 	}
 
 	@Given("^Close the browser$")
@@ -99,6 +109,10 @@ public class Def_UnprovisioningVS {
 		{
 	    System.out.println("Virtual Server Deprovision Finished");
 		}
+		else if (DeleteStatus==2)
+		{
+		    System.out.println("No Virtual Server Found for Deletion");
+			}
 		else
 		{
 		    System.out.println("Some of the Servers ware not deleted");
