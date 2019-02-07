@@ -59,6 +59,11 @@ public class StacksPage {
 	}
 			
 		
+		// Search Result Area 
+		public static WebElement Div_SearchResultArea(WebDriver driver) {
+		element = driver.findElement(By.xpath("/html/body/div/section/main/div/div/sp-page-row/div/div[2]"));
+		return element;
+	}
 		
 	
 }

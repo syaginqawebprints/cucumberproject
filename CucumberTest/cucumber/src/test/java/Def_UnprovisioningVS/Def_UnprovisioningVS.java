@@ -64,6 +64,13 @@ public class Def_UnprovisioningVS {
         	{
         	PageObjects.StacksPage.txt_search(driver).sendKeys(DelServer);
     		PageObjects.StacksPage.btn_search(driver).click();
+    		String SearchResult=PageObjects.StacksPage.Div_SearchResultArea(driver).getText();
+    		if (SearchResult.contains("No Results"))
+    		{
+    			DeleteStatus=3;
+    		}
+    		else
+    		{
     		PageObjects.StacksPage.div_searchrsults(driver).findElements(By.partialLinkText(DelServer)).get(1).click();
     		Thread.sleep(3000);
     		WebDriverWait wait=new WebDriverWait(driver, 300);
@@ -92,6 +99,7 @@ public class Def_UnprovisioningVS {
         	Utils.CommonScripts.WriteServerList(ServerList);
     		//System.out.println("Virtual Server Removed ");
         	}	
+        }
 		}
 		
 		
@@ -112,6 +120,11 @@ public class Def_UnprovisioningVS {
 		else if (DeleteStatus==2)
 		{
 		    System.out.println("No Virtual Server Found for Deletion");
+			}
+		
+		else if (DeleteStatus==3)
+		{
+		    System.out.println("Virtual servers not listed in the search");
 			}
 		else
 		{
