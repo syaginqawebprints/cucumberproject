@@ -6,4 +6,6 @@
 <item elementID="=cucumber/src\/test\/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1544675420234_0" label="Window Working Set" name="Aggregate for window 1544675420234"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1549515157545_3" label="Window Working Set" name="Aggregate for window 1549515157545"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1549555581971_4" label="Window Working Set" name="Aggregate for window 1549555581970"/>
 </workingSetManager>
