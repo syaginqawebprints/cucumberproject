@@ -4384,3 +4384,7 @@ java.lang.NullPointerException: null
 2019-02-09 02:26:00,309 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
 2019-02-09 02:26:00,311 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-02-09 02:26:00,348 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 10 resources
+2019-02-09 02:35:15,266 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-09 02:35:15,266 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Cucumber Project\CucumberTest\cucumber\src\main\resources
+2019-02-09 02:35:15,268 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-09 02:35:15,268 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

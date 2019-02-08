@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.130+E:\Cucumber Project\CucumberTest\.metadata\.plugins\org.eclipse.jdt.core
 160912177.index
 127148139.index
@@ -50,3 +51,6 @@ INDEX VERSION 1.130+E:\Cucumber Project\CucumberTest\.metadata\.plugins\org.ecli
 2505764265.index
 1084624933.index
 1940248256.index
+=======
+INDEX VERSION 1.131+C:\Automation\cucumber\CucumberTest\.metadata\.plugins\org.eclipse.jdt.core
+>>>>>>> 516d6044a59f25baf8015eb9ff9f37507f87b857
