@@ -30,6 +30,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import gherkin.formatter.model.Row;
 import jxl.Cell;
 import jxl.CellType;
 import jxl.Sheet;
@@ -189,19 +190,33 @@ public class CommonScripts {
 				}
 	            
 	            Sheet sheet = w.getSheet(0);	           
-	                for (int i = 0; i < sheet.getRows(); i++) {
-	                    Cell cell = sheet.getCell(0, i);
-	                    CellType type = cell.getType();
-	                    Cell cell1 = sheet.getCell(1, i);
-	                    if (type == CellType.LABEL) {
-	                    	
-	                    	ServerList.add(cell.getContents().toString()+";"+cell1.getContents().toString());
-	                       
-	                    }
+	                for (int i = 0; i < sheet.getRows()-1; i++) {
+	                	//System.out.println(sheet.getCell(0, i).getContents());
+	                	Cell[] cells=sheet.getRow(i);
+	                	if (cells.length>=2)
+	                	{
+	                		 Cell cell = sheet.getCell(0, i);
+	 	                    CellType type = cell.getType();
+	 	                    Cell cell1 = sheet.getCell(1, i);
+	 	                    if (type == CellType.LABEL) {
+	 	                    	
+	 	                    ServerList.add(cell.getContents().toString()+";"+cell1.getContents().toString());
+	                	}
+	                	}
+	                   
+	 	                    else
+	 	                    {
+	 	                    	Cell cellss = sheet.getCell(0, i);
+	 		                    CellType types = cellss.getType();
+	 		                    if (types == CellType.LABEL) {
+	 		                    	
+	 		                    	ServerList.add(cellss.getContents().toString()+";"+" ");
+	 		                    }
+	 	                    }
 	                }
 	            
 	        } catch (BiffException e) {
-	            e.printStackTrace();
+	           // e.printStackTrace();
 	        }
 	        return ServerList;
 	      
@@ -216,8 +231,22 @@ public class CommonScripts {
 		        for (int i=0;i<=ServerList.size()-1;i++)
 		        {
 		        	
-		        	Label label = new Label(0,i,ServerList.get(i).toString());
-					ws.addCell(label); 
+		        	String Current=ServerList.get(i).toString();
+		        	System.out.println(Current);
+		        	if (Current.contains(";"))
+		        	{
+		        		String AddCheck []=Current.split(";");
+		        		Label label = new Label(0,i,AddCheck [0]);
+		        		Label label1 = new Label(1,i,AddCheck [1]);
+						ws.addCell(label); 
+						ws.addCell(label1); 
+		        	}
+		        	else
+		        	{
+		        		Label label2 = new Label(0,i,Current);
+						ws.addCell(label2);
+		        	}
+		        		        			        	
 		        }	
 			
 			

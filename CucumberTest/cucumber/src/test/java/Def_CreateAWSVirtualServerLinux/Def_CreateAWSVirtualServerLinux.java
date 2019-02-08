@@ -116,12 +116,15 @@ public class Def_CreateAWSVirtualServerLinux {
 			GetStackStatusMessage();
 			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessages(driver).getText();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+			//System.out.println(StackStatusMessage);
+			//System.out.println(RequestStatusMessage);
+			
 			if(RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
 				System.out.println(StackStatusMessage);
 			}
-			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Completed"))
+			else if (RequestStatusMessage.contains("Deployment Successful")  && StackStatusMessage.contains("Completed"))
 			{
 				ArrayList<String> ServerList =  new ArrayList<String>();
 				ServerList=Utils.CommonScripts.GetServerList();
