@@ -116,18 +116,20 @@ public class Def_CreateAzureVirtualServerLinux {
 			GetStackStatusMessage();
 			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessages(driver).getText();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+		
+			
 			if(RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
 				System.out.println(StackStatusMessage);
 			}
-			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Completed"))
+			else if (RequestStatusMessage.contains("Deployment Successful")  && StackStatusMessage.contains("Completed"))
 			{
-				ArrayList<String> ServerList =  new ArrayList<String>();
+				String[][] ServerList;
 				ServerList=Utils.CommonScripts.GetServerList();
-				ServerList.add(ServerName);
-				Utils.CommonScripts.WriteServerList(ServerList);
-				System.out.println("Azure Linux Virtual Server Created ");
+				int totalrows=ServerList.length;
+				Utils.CommonScripts.WriteServerList(ServerName, "",totalrows);
+				System.out.println("Azure Linux Virtual Server Created");
 				
 			}
 			else

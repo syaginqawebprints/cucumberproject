@@ -114,7 +114,6 @@ public class Def_CreateGoogleVirtualServerLinux {
 	@Given("^Check Status and print message$")
 	public void check_Status_and_print_message() throws Throwable {
 
-
 		try {
 			WebDriverWait wait=new WebDriverWait(driver, 300);
 			Thread.sleep(3000);
@@ -122,18 +121,20 @@ public class Def_CreateGoogleVirtualServerLinux {
 			GetStackStatusMessage();
 			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessages(driver).getText();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+		
+			
 			if(RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
 				System.out.println(StackStatusMessage);
 			}
-			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Completed"))
+			else if (RequestStatusMessage.contains("Deployment Successful")  && StackStatusMessage.contains("Completed"))
 			{
-				ArrayList<String> ServerList =  new ArrayList<String>();
+				String[][] ServerList;
 				ServerList=Utils.CommonScripts.GetServerList();
-				ServerList.add(ServerName);
-				Utils.CommonScripts.WriteServerList(ServerList);
-				System.out.println("Google Linux Virtual Server Created ");
+				int totalrows=ServerList.length;
+				Utils.CommonScripts.WriteServerList(ServerName, "",totalrows);
+				System.out.println("Google Linux Virtual Server Created");
 				
 			}
 			else

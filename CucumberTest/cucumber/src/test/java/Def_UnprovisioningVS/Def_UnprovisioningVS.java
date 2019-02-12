@@ -153,7 +153,7 @@ public class Def_UnprovisioningVS {
         }
         	if (DeleteStatus==3)
         	{
-        	for (int j=0;j<=ServerList.size()-1;j++)
+        	for (int j=0;j<=ServerList.size();j++)
         	{
         		String AddServer=ServerList.get(j);
         		String AddCheck []=AddServer.split(";");

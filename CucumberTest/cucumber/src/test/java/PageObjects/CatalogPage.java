@@ -38,7 +38,7 @@ public class CatalogPage {
 	
 	//Virtual Server Link
 	public static WebElement link_createvirtualserver(WebDriver driver) {
-		element =driver.findElement(By.xpath("//*[contains(text(), 'Create Virtual Server')]"));
+		element =driver.findElement(By.cssSelector("div[title^=\"Create Virtual Server\"]"));
 		return element;
 	}
 	

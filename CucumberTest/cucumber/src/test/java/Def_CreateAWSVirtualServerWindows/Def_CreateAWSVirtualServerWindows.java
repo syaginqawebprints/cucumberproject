@@ -115,18 +115,20 @@ public class Def_CreateAWSVirtualServerWindows {
 			GetStackStatusMessage();
 			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessages(driver).getText();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+		
+			
 			if(RequestStatusMessage.contains("Failed") || StackStatusMessage.contains("Error"))
 			{
 				System.out.println("Operation failed");
 				System.out.println(StackStatusMessage);
 			}
-			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Completed"))
+			else if (RequestStatusMessage.contains("Deployment Successful")  && StackStatusMessage.contains("Completed"))
 			{
-				ArrayList<String> ServerList =  new ArrayList<String>();
+				String[][] ServerList;
 				ServerList=Utils.CommonScripts.GetServerList();
-				ServerList.add(ServerName);
-				Utils.CommonScripts.WriteServerList(ServerList);
-				System.out.println("AWS Windows Virtual Server Created ");
+				int totalrows=ServerList.length;
+				Utils.CommonScripts.WriteServerList(ServerName, "",totalrows);
+				System.out.println("AWS Windows Virtual Server Created");
 				
 			}
 			else
@@ -138,8 +140,6 @@ public class Def_CreateAWSVirtualServerWindows {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 		}
-		
-		
 		
 	}
 

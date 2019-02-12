@@ -22,6 +22,13 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -30,17 +37,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import gherkin.formatter.model.Row;
-import jxl.Cell;
-import jxl.CellType;
-import jxl.Sheet;
-import jxl.Workbook;
-import jxl.read.biff.BiffException;
-import jxl.write.Label;
-import jxl.write.WritableSheet;
-import jxl.write.WritableWorkbook;
-import jxl.write.WriteException;
-import jxl.write.biff.RowsExceededException;
+
 
 public class CommonScripts {
 	
@@ -175,97 +172,122 @@ public class CommonScripts {
 		return text;
 	}
 	
-
-	public static ArrayList<String> GetServerList() {
-		String filePath = readProperty("virtual.server.dbpath");
-		File inputWorkbook = new File(filePath);
-		 Workbook w = null;
-		 ArrayList<String> ServerList =  new ArrayList<String>();
-	        try {
-	            try {
-					w = Workbook.getWorkbook(inputWorkbook);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-	            
-	            Sheet sheet = w.getSheet(0);	           
-	                for (int i = 0; i < sheet.getRows()-1; i++) {
-	                	//System.out.println(sheet.getCell(0, i).getContents());
-	                	Cell[] cells=sheet.getRow(i);
-	                	if (cells.length>=2)
-	                	{
-	                		 Cell cell = sheet.getCell(0, i);
-	 	                    CellType type = cell.getType();
-	 	                    Cell cell1 = sheet.getCell(1, i);
-	 	                    if (type == CellType.LABEL) {
-	 	                    	
-	 	                    ServerList.add(cell.getContents().toString()+";"+cell1.getContents().toString());
-	                	}
-	                	}
-	                   
-	 	                    else
-	 	                    {
-	 	                    	Cell cellss = sheet.getCell(0, i);
-	 		                    CellType types = cellss.getType();
-	 		                    if (types == CellType.LABEL) {
-	 		                    	
-	 		                    	ServerList.add(cellss.getContents().toString()+";"+" ");
-	 		                    }
-	 	                    }
-	                }
-	            
-	        } catch (BiffException e) {
-	           // e.printStackTrace();
-	        }
-	        return ServerList;
-	      
-	}
-	
-	public static void WriteServerList(ArrayList ServerList) {
-		try {
+		public static String[][] GetServerList() {
 			String filePath = readProperty("virtual.server.dbpath");
-			WritableWorkbook wb = Workbook.createWorkbook(new File(filePath));
-			WritableSheet ws = wb.createSheet("ServerList",1);
-			{
-		        for (int i=0;i<=ServerList.size()-1;i++)
-		        {
-		        	
-		        	String Current=ServerList.get(i).toString();
-		        	System.out.println(Current);
-		        	if (Current.contains(";"))
-		        	{
-		        		String AddCheck []=Current.split(";");
-		        		Label label = new Label(0,i,AddCheck [0]);
-		        		Label label1 = new Label(1,i,AddCheck [1]);
-						ws.addCell(label); 
-						ws.addCell(label1); 
-		        	}
-		        	else
-		        	{
-		        		Label label2 = new Label(0,i,Current);
-						ws.addCell(label2);
-		        	}
-		        		        			        	
-		        }	
-			
-			
-			}
-			wb.write();
-			wb.close();
-		} catch (RowsExceededException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (WriteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-	
-	
+			Integer DataListSize=2;
+			FileInputStream fis = null;
+			try {
+				fis = new FileInputStream(filePath);
+			} catch (FileNotFoundException e) {
 
+			}
+			Workbook workbook = null;
+			Sheet sheet;
+			if (filePath.endsWith(".xlsx"))
+				try {
+					workbook = new XSSFWorkbook(fis);
+				} catch (IOException e) {
+
+				}
+			else if (filePath.endsWith(".xls"))
+				workbook = new HSSFWorkbook();
+			else {
+				System.err.println("Invalid file type");
+			}
+			sheet = workbook.getSheetAt(0);
+			int RCount = sheet.getPhysicalNumberOfRows();
+			String[][] ServerList = new String[RCount][2];
+			for (int count = 0; count <= RCount - 1; count++) {
+				Row row = sheet.getRow(count);
+				for (int j = 0; j <= DataListSize - 1; j++) {
+					try {
+						if (row.getCell(j).toString() == null) {
+							ServerList[count][j] = "";
+						} else {
+							ServerList[count][j] = row.getCell(j).toString();
+						}
+
+					} catch (NullPointerException e) {
+						ServerList[count][j] = "";
+					}
+				}
+			}
+
+			return ServerList;
+
+		}
+	
+		public static int WriteServerList(String ServerName, String DelStatus, int RowNumber)
+				throws IOException {
+			
+			String filePath = readProperty("virtual.server.dbpath");
+			String SheetName="VirtualServers";
+			String WritefilePath = filePath;
+			List<String> SheetNames = new ArrayList<String>();
+			File file = new File(WritefilePath);
+			XSSFWorkbook workbook = null;
+			XSSFSheet sheet = null;
+			// Managing Sheet Name Length
+			if (SheetName.length() >= 31) {
+				SheetName = SheetName
+						.substring(0, Math.min(SheetName.length(), 31));
+
+			}
+			if (file.exists()) {
+
+				FileInputStream input = new FileInputStream(file);
+				workbook = new XSSFWorkbook(input);
+
+				for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
+					XSSFSheet currentSheet = workbook.getSheetAt(i);
+					SheetNames.add(currentSheet.getSheetName());
+				}
+
+				if (SheetNames.contains(SheetName)) {
+					sheet = workbook.getSheet(SheetName);
+				} else {
+
+					sheet = workbook.createSheet(SheetName);
+				}
+
+				input.close();
+			} else {
+				workbook = new XSSFWorkbook();
+				sheet = workbook.createSheet(SheetName);
+			}
+
+			int rowNo = 0;
+			Row row;
+			Cell cell;
+			
+			try {
+				FileOutputStream output = new FileOutputStream(file);
+						//---------ROW4
+				row = sheet.createRow(RowNumber);
+				cell = row.createCell(0);
+				cell.setCellValue(ServerName);
+				cell = row.createCell(1);
+				cell.setCellValue(DelStatus);
+				
+				if (RowNumber == 0) {
+					RowNumber = rowNo++;
+				}
+
+				else {
+					RowNumber = RowNumber + 1;
+				}
+			
+				workbook.write(output);
+				output.close();
+
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			return RowNumber;
+	
+	
+}
 }
