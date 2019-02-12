@@ -290,4 +290,33 @@ public class CommonScripts {
 	
 	
 }
+		
+		public static void RemoveRow(int RowNum) {
+			String filePath = readProperty("virtual.server.dbpath");
+			FileInputStream fis = null;
+			try {
+				fis = new FileInputStream(filePath);
+			} catch (FileNotFoundException e) {
+
+			}
+			Workbook workbook = null;
+			Sheet sheet;
+			if (filePath.endsWith(".xlsx"))
+				try {
+					workbook = new XSSFWorkbook(fis);
+				} catch (IOException e) {
+
+				}
+			else if (filePath.endsWith(".xls"))
+				workbook = new HSSFWorkbook();
+			else {
+				System.err.println("Invalid file type");
+			}
+			sheet = workbook.getSheetAt(0);
+			Row DelRow=sheet.getRow(RowNum);
+			sheet.removeRow(DelRow);
+
+			
+
+		}
 }

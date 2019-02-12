@@ -134,7 +134,7 @@ public class Def_CreateGoogleVirtualServerWindows {
 				ServerList=Utils.CommonScripts.GetServerList();
 				int totalrows=ServerList.length;
 				Utils.CommonScripts.WriteServerList(ServerName, "",totalrows);
-				System.out.println("Google Windows Virtual Server Created");
+				System.out.println(ServerName+ " Virtual Server Created");
 				
 			}
 			else

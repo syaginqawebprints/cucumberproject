@@ -128,7 +128,7 @@ public class Def_CreateAWSVirtualServerWindows {
 				ServerList=Utils.CommonScripts.GetServerList();
 				int totalrows=ServerList.length;
 				Utils.CommonScripts.WriteServerList(ServerName, "",totalrows);
-				System.out.println("AWS Windows Virtual Server Created");
+				System.out.println(ServerName+ " Virtual Server Created");
 				
 			}
 			else

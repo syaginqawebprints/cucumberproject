@@ -131,7 +131,7 @@ public class Def_CreateAWSVirtualServerLinux {
 				ServerList=Utils.CommonScripts.GetServerList();
 				int totalrows=ServerList.length;
 				Utils.CommonScripts.WriteServerList(ServerName, "",totalrows);
-				System.out.println("AWS Linux Virtual Server Created");
+				System.out.println(ServerName+ " Virtual Server Created");
 				
 			}
 			else
