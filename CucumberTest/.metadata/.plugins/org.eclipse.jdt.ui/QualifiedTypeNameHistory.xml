@@ -30,4 +30,5 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="jxl.write.WritableWorkbook"/>
 <fullyQualifiedTypeName name="jxl.write.Label"/>
+<fullyQualifiedTypeName name="gherkin.formatter.model.Row"/>
 </qualifiedTypeNameHistroy>

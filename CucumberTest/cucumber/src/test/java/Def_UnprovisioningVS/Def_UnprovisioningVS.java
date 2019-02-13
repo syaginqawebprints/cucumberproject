@@ -1,8 +1,17 @@
 
 package Def_UnprovisioningVS;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -93,20 +102,20 @@ public class Def_UnprovisioningVS {
 									}
 									else
 									{
-										Thread.sleep(3000);
+										driver.navigate().refresh();
+										Thread.sleep(3000);										
 										PageObjects.StacksPage.cmb_DeprovisionAction(driver).click();
 										driver.findElement(By.xpath("//*[@id=\"x4a6a1c9a373fd748b8280ba754990e27\"]/div/div[2]/div/select/option[2]")).click();
-										Thread.sleep(2000);
+										Thread.sleep(5000);										
 										wait.until(ExpectedConditions.elementToBeClickable(PageObjects.StacksPage.btn_DeprovisionOK(driver)));
-										Thread.sleep(2000);
-										JavascriptExecutor js = (JavascriptExecutor) driver; 
-										js.executeScript("arguments[0].click();",PageObjects.StacksPage.btn_DeprovisionOK(driver));
-										
+										//JavascriptExecutor js = (JavascriptExecutor) driver; 
+										//js.executeScript("arguments[0].click();",PageObjects.StacksPage.btn_DeprovisionOK(driver));
+										Thread.sleep(3000);
+										PageObjects.StacksPage.btn_DeprovisionOK(driver).click();
 
 										try {
 											wait=new WebDriverWait(driver, 300);
-											Thread.sleep(3000);
-											wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.xpath("//*[@id=\"status\"]/div/div[1]/div/div/div[2]")), "Request Completed"));
+											Thread.sleep(10000);
 											GetStackStatusMessage();
 											String RequestStatusMessage=driver.findElement(By.xpath("//*[@id=\"status\"]/div/div[1]/div/div/div[2]")).getText();
 											String StackStatusMessage=driver.findElement(By.xpath("//*[@id=\"status\"]/div/div[2]/div/div/div[2]")).getText();
@@ -115,9 +124,24 @@ public class Def_UnprovisioningVS {
 												System.out.println("Operation failed");
 												System.out.println(StackStatusMessage);
 											}
-											else if (RequestStatusMessage.contains("Completed"))
+											else if (RequestStatusMessage.contains("Completed") && StackStatusMessage.contains("Completed"))
 											{
-												Utils.CommonScripts.RemoveRow(i);
+												//Utils.CommonScripts.RemoveRow(i);
+												String filePath = Utils.CommonScripts.readProperty("virtual.server.dbpath");
+												FileInputStream fis = null;
+												
+												 
+												    fis = new FileInputStream(filePath);
+												    XSSFWorkbook wb = new XSSFWorkbook(fis);
+												    XSSFSheet sheet = wb.getSheetAt(0);
+												    Row DelRows=sheet.getRow(i);												    
+												    sheet.removeRow(DelRows);
+												    File outWB = new File(filePath);
+												    OutputStream out = new FileOutputStream(outWB);
+												    wb.write(out);
+												    out.flush();
+												    out.close();
+												    System.out.println(DeleteServer);
 												DeleteStatus=4;						
 											}
 											else
@@ -162,6 +186,10 @@ public class Def_UnprovisioningVS {
 		    System.out.println("Virtual Server already Terminated");
 			}
 		else if (DeleteStatus==3)
+		{
+			System.out.println("Virtual Server Resolving error state");
+		}
+		else if (DeleteStatus==4)
 		{
 			System.out.println("Virtual server Deleted Successfully");
 		}
