@@ -3,10 +3,12 @@ package PageObjects;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -361,7 +363,17 @@ public class CreateVirtualServerPage {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(3000);	
-		PageObjects.CreateVirtualServerPage.cmb_ResourceGroup(driver).click();
+        Capabilities cp = ((RemoteWebDriver) driver).getCapabilities();
+        if (cp.getBrowserName().equals("chrome")) {
+            try {
+                ((JavascriptExecutor) driver).executeScript(
+                        "arguments[0].scrollIntoView(true);", PageObjects.CreateVirtualServerPage.cmb_ResourceGroup(driver));
+            } catch (Exception e) {
+
+            }
+        }
+
+        PageObjects.CreateVirtualServerPage.cmb_ResourceGroup(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		Thread.sleep(2000);	
 		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-10\"]"));

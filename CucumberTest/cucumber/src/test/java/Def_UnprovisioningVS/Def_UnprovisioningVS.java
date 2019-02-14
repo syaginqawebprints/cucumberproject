@@ -124,6 +124,13 @@ public class Def_UnprovisioningVS {
 												System.out.println("Operation failed");
 												System.out.println(StackStatusMessage);
 											}
+											else if (RequestStatusMessage.contains("Rejected"))
+											{
+												
+												System.out.println(DeleteServer);
+												System.out.println("Virtual Server Deletion Rejected");
+												System.out.println(StackStatusMessage);
+											}
 											else if (RequestStatusMessage.contains("Completed") && StackStatusMessage.contains("Completed"))
 											{
 												//Utils.CommonScripts.RemoveRow(i);
@@ -135,7 +142,7 @@ public class Def_UnprovisioningVS {
 												    XSSFWorkbook wb = new XSSFWorkbook(fis);
 												    XSSFSheet sheet = wb.getSheetAt(0);
 												    Row DelRows=sheet.getRow(i);												    
-												    sheet.removeRow(DelRows);
+												    sheet.removeRow(DelRows);		    
 												    File outWB = new File(filePath);
 												    OutputStream out = new FileOutputStream(outWB);
 												    wb.write(out);
@@ -204,7 +211,7 @@ public String GetStackStatusMessage() throws InterruptedException {
 		Thread.sleep(5000);
 		String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessages(driver).getText();
 		String StackStatusMessage="";
-		if (RequestStatusMessage.contains ("Request Completed"))
+		if (RequestStatusMessage.contains ("Request Completed") || RequestStatusMessage.contains ("Rejected"))
 		{
 			Thread.sleep(5000);
 			StackStatusMessage=driver.findElement(By.xpath("//*[@id=\"status\"]/div/div[2]/div/div/div[2]")).getText();
