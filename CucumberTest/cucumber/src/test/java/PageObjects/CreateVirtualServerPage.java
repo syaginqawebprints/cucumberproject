@@ -692,4 +692,123 @@ public class CreateVirtualServerPage {
 		element = driver.findElement(By.xpath("//*[@id=\"catItemSubmit\"]"));
 		return element;
 	}
+	
+	
+	// Managed Virtual Server Controls
+	
+	//Compute Profile Drop Down
+	public static WebElement cmb_MngComputeProfile(WebDriver driver) {
+		element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-10\"]"));
+		return element;
+	}
+	
+
+	//Select Compute Profile
+	public static void  MngSelectComputeProfile(WebDriver driver, String ServerTxt) throws InterruptedException {
+		WebDriverWait wait=new WebDriverWait(driver, 300);
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		Thread.sleep(2000);	
+		PageObjects.CreateVirtualServerPage.cmb_MngComputeProfile(driver).click();
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		Thread.sleep(2000);	
+		WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-10\"]"));
+		List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
+	       for (WebElement opt : list) {	
+	          if (opt.getAttribute("innerHTML").contains(ServerTxt)) {	 
+	        	  opt.click();
+	             break;	 
+	          }	 
+	       }
+	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+	       Thread.sleep(1000);	
+	       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+	}
+	
+	
+	
+	//Image Drop Down
+		public static WebElement cmb_MngImage(WebDriver driver) {
+			element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-16\"]"));
+			return element;
+		}
+		
+		//Select Image
+		public static void  MngSelectImage(WebDriver driver, String ServerTxt) throws InterruptedException {
+			WebDriverWait wait=new WebDriverWait(driver, 300);
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			Thread.sleep(2000);	
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			PageObjects.CreateVirtualServerPage.cmb_MngImage(driver).click();
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			Thread.sleep(2000);	
+			WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-16\"]"));
+			List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
+		       for (WebElement opt : list) {	
+		          if (opt.getAttribute("innerHTML").contains(ServerTxt)) {	 
+		        	  opt.click();
+		             break;	 
+		          }	 
+		       }
+		       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		       Thread.sleep(1000);	
+		       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		}
+		
+		//Virtual Network Drop Down
+		public static WebElement cmb_MngVirtualNetwork(WebDriver driver) {
+			element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-11\"]"));
+			return element;
+		}
+		
+		//Select Virtual Network
+		public static void  MngSelectVirtualNetwork(WebDriver driver, String ServerTxt) throws InterruptedException {
+			WebDriverWait wait=new WebDriverWait(driver, 300);
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			Thread.sleep(3000);	
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			PageObjects.CreateVirtualServerPage.cmb_MngVirtualNetwork(driver).click();
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			Thread.sleep(2000);	
+			WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-11\"]"));
+			List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
+		       for (WebElement opt : list) {	
+		          if (opt.getAttribute("innerHTML").contains(ServerTxt)) {	 
+		        	  opt.click();
+		             break;	 
+		          }	 
+		       }
+		       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		       Thread.sleep(1000);	
+		       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		}
+		
+		//Subnet Drop Down
+		public static WebElement cmb_MngSubnet(WebDriver driver) {
+			element = driver.findElement(By.xpath("//*[@id=\"select2-chosen-17\"]"));
+			return element;
+		}
+		
+		//Select Subnet
+		public static void  MngSelectSubnet(WebDriver driver, String ServerTxt) throws InterruptedException {
+			WebDriverWait wait=new WebDriverWait(driver, 300);
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			Thread.sleep(3000);	
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			PageObjects.CreateVirtualServerPage.cmb_MngSubnet(driver).click();
+			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			Thread.sleep(2000);	
+			WebElement DropValues=driver.findElement(By.xpath("//*[@id=\"select2-results-17\"]"));
+			List<WebElement> list = DropValues.findElements(By.tagName("li"));	 
+		       for (WebElement opt : list) {	
+		          if (opt.getAttribute("innerHTML").contains(ServerTxt)) {	 
+		        	  opt.click();
+		             break;	 
+		          }	 
+		       }
+		       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		       Thread.sleep(1000);	
+		       wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+		}
+		
+		
 }

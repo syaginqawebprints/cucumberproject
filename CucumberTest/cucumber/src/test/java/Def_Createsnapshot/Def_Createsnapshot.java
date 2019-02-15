@@ -11,6 +11,7 @@ import cucumber.api.java.en.Given;
 
 public class Def_Createsnapshot {
 	WebDriver driver;
+	String snapshottext;
 	
 	@Given("^Login and click on catalog menu$")
 	public void login_and_click_on_catalog_menu() throws Throwable {
@@ -38,24 +39,24 @@ public class Def_Createsnapshot {
 			//PageObjects.SnapshotPage.SelectLocation(driver, "AWS");
 			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			Thread.sleep(2000);
 			JavascriptExecutor js = (JavascriptExecutor) driver; 
-			PageObjects.SnapshotPage.txt_StackName(driver).sendKeys("snapshottest-"+Utils.CommonScripts.GetDateTime());
+			snapshottext="snapshot-"+Utils.CommonScripts.GetDateTime();
+			PageObjects.SnapshotPage.txt_StackName(driver).sendKeys(snapshottext);
+			Thread.sleep(2000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			//PageObjects.SnapshotPage.SelectUserGroup(driver, "ATF2");
-			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 			js.executeScript("arguments[0].click();", PageObjects.SnapshotPage.btn_provision(driver));
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			PageObjects.SnapshotPage.SelectVolumeId(driver, "vol-0022596284b1d54f5");
+			Thread.sleep(2000);
+			PageObjects.SnapshotPage.SelectVolumeId(driver, "vol");
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-			//PageObjects.SnapshotPage.txt_description(driver).sendKeys("snapshot-description");
-			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+			Thread.sleep(2000);
 			js.executeScript("arguments[0].click();", PageObjects.SnapshotPage.btn_submit(driver));
-			
+			Thread.sleep(2000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -69,11 +70,9 @@ public class Def_Createsnapshot {
 			WebDriverWait wait=new WebDriverWait(driver, 300);
 			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(PageObjects.LandingPage.div_HeadLoader(driver)));
-			
-			
 			//wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_stackmessage(driver), "response"));
-			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "details"));
-			Thread.sleep(3000);
+			wait.until(ExpectedConditions.textToBePresentInElement(PageObjects.ActivitiesPage.lbl_requestmessages(driver), "Deploying Stack"));
+			GetStackStatusMessage();
 			String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessage(driver).getText();
 			String StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
 			
@@ -84,9 +83,9 @@ public class Def_Createsnapshot {
 				System.out.println(StackStatusMessage);
 				
 			}
-			else if (RequestStatusMessage.contains("Success")  && StackStatusMessage.contains("Success"))
+			else if (RequestStatusMessage.contains("Deployment Successful")  && StackStatusMessage.contains("Completed"))
 			{
-				System.out.println("Snapshot Created ");
+				System.out.println(snapshottext +" Created ");
 				
 			}
 			else
@@ -113,6 +112,25 @@ public class Def_Createsnapshot {
 	}
 
 
-
+	public String GetStackStatusMessage() throws InterruptedException {
+		
+		Thread.sleep(5000);
+		String RequestStatusMessage=PageObjects.ActivitiesPage.lbl_requestmessages(driver).getText();
+		String StackStatusMessage="";
+		if (RequestStatusMessage.contains("Deploying Stack") && !RequestStatusMessage.contains("View"))
+		{
+			Thread.sleep(5000);
+			GetStackStatusMessage();
+		}
+		else
+		{
+			Thread.sleep(5000);
+			StackStatusMessage=PageObjects.ActivitiesPage.lbl_stackmessage(driver).getText();
+		}
+		 
+		return StackStatusMessage;
+		
+	}
+	
 }
 

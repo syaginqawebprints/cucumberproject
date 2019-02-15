@@ -191,32 +191,39 @@ public class Def_CheckMenuItems {
 
 	@Given("^Go to catalog page and evaluate all available catalog options$")
 	public void go_to_catalog_page_and_evaluate_all_available_catalog_options() throws Throwable {
-		   
-	    WebElement CatalogPage= PageObjects.CatalogPage.div_catlogitems(driver);
+		
+		WebDriverWait wait=new WebDriverWait(driver, 300);
+		PageObjects.ManageStacksPage.menu_catalog(driver).click();
+		
+		//wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));  
+		Thread.sleep(2000);
+	    WebElement CatalogPage= driver.findElement(By.xpath("//*[@id=\"x4c6cbea60b212200eff7ef9bb4673a29\"]"));
 	    List <WebElement> CatItems= CatalogPage.findElements(By.cssSelector("div[class=\"panel panel-default b\"]"));
-	    
 	    String CatTitle="";
 	    String OpenedTitle="";
-	    WebDriverWait wait=new WebDriverWait(driver, 300);
+	    int j=0;
 	    for (int i=0; i<=CatItems.size()-1; i++)
 	    {
+	    	j++;
+	   
 	    	try {
-				
-				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id=\"x3b166f970fac2f04e7fef77ce1050ed9\"]/div/div/div/span")));
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"x73f60b7437d3db80b8280ba754990e82\"]/div/div/div[2]/div[1]/div/a/div/h4")));
+	    		Thread.sleep(5000);
+	    		//wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 				CatalogPage= driver.findElement(By.xpath("/html/body/div[1]/section/main/div/div/sp-page-row/div/div[2]"));
 				CatItems= CatalogPage.findElements(By.cssSelector("div[class=\"panel panel-default b\"]"));
 				CatTitle=CatItems.get(i).findElement(By.tagName("h4")).getText();
 				CatItems.get(i).findElement(By.tagName("h4")).click();
-				
+				wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
+				//Thread.sleep(5000);
+				//
 				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"xc7612a3a0bd32200eff7ef9bb4673a46\"]/div/div/div[1]/h1")));
 				OpenedTitle=driver.findElement(By.xpath("//*[@id=\"xc7612a3a0bd32200eff7ef9bb4673a46\"]/div/div/div[1]/h1")).getText();
 				
 				Assert.assertTrue(CatTitle+" opened!", OpenedTitle.contains(CatTitle));
-				System.out.println(CatTitle+" opened!");
+				System.out.println(j+". "+CatTitle+" opened!");
 				
 				driver.navigate().back();
-				
+				wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

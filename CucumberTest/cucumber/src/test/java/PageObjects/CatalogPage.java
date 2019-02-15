@@ -42,4 +42,16 @@ public class CatalogPage {
 		return element;
 	}
 	
+	//Item Holder
+	public static WebElement div_itemholder(WebDriver driver) {
+		element =driver.findElement(By.xpath("//*[@id=\"x4c6cbea60b212200eff7ef9bb4673a29\"]"));
+		return element;
+	}
+	
+	//Managed Virtual Server Link
+	public static WebElement link_managedvirtualserver(WebDriver driver) {
+		element =driver.findElement(By.cssSelector("div[title^=\"Managed VM Virtual description\"]"));
+		return element;
+	}
+
 }

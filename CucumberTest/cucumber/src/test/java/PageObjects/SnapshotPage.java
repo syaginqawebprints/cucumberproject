@@ -152,11 +152,10 @@ public class SnapshotPage {
 	//Select Volume Id
 	public static void  SelectVolumeId(WebDriver driver, String ServerTxt) throws InterruptedException {
 		WebDriverWait wait=new WebDriverWait(driver, 300);
-		Thread.sleep(3000);	
+		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
 		PageObjects.SnapshotPage.cmb_volumeid(driver).click();
 		wait.until(ExpectedConditions.invisibilityOf(PageObjects.BucketResourcePage.div_loading(driver)));
-		Thread.sleep(1000);		
-		
+			
 		WebElement DropValues=null;
 		try {
 			if (driver.findElement(By.xpath("//*[@id=\"select2-chosen-7\"]")).isDisplayed())
